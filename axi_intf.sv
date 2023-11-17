@@ -1,26 +1,26 @@
 interface axi_intf #(C_S_AXI_ADDR_WIDTH = 9, C_S_AXI_DATA_WIDTH = 32) (input clk);
     // AW channel
-    bit [C_S_AXI_ADDR_WIDTH-1:0]        s_axi_awaddr; 
-    bit                                 s_axi_awvalid;
-    bit                                 s_axi_awready;  
+    logic [C_S_AXI_ADDR_WIDTH-1:0]        s_axi_awaddr; 
+    logic                                 s_axi_awvalid;
+    logic                                 s_axi_awready;  
     // W channel 
-    bit [C_S_AXI_DATA_WIDTH-1:0]        s_axi_wdata;  
-    bit [(C_S_AXI_DATA_WIDTH/8)-1:0]    s_axi_wstrb; 
-    bit                                 s_axi_wvalid;
-    bit                                 s_axi_wready;
+    logic [C_S_AXI_DATA_WIDTH-1:0]        s_axi_wdata;  
+    logic [(C_S_AXI_DATA_WIDTH/8)-1:0]    s_axi_wstrb; 
+    logic                                 s_axi_wvalid;
+    logic                                 s_axi_wready;
     // B channel
-    bit [1:0]                           s_axi_bresp; 
-    bit                                 s_axi_bvalid;
-    bit                                 s_axi_bready;
+    logic [1:0]                           s_axi_bresp; 
+    logic                                 s_axi_bvalid;
+    logic                                 s_axi_bready;
     // AR channel
-    bit [C_S_AXI_ADDR_WIDTH-1:0]        s_axi_araddr;  
-    bit                                 s_axi_arvalid;
-    bit                                 s_axi_arready;
+    logic [C_S_AXI_ADDR_WIDTH-1:0]        s_axi_araddr;  
+    logic                                 s_axi_arvalid;
+    logic                                 s_axi_arready;
     // R channel
-    bit [C_S_AXI_DATA_WIDTH-1:0]        s_axi_rdata; 
-    bit [1:0]                           s_axi_rresp;
-    bit                                 s_axi_rvalid;
-    bit                                 s_axi_rready;
+    logic [C_S_AXI_DATA_WIDTH-1:0]        s_axi_rdata; 
+    logic [1:0]                           s_axi_rresp;
+    logic                                 s_axi_rvalid;
+    logic                                 s_axi_rready;
 
     task clk_pos(input int count);
         repeat (count) @(posedge clk);
