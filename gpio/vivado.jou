@@ -1,0 +1,23 @@
+#-----------------------------------------------------------
+# Vivado v2019.1 (64-bit)
+# SW Build 2552052 on Fri May 24 14:47:09 MDT 2019
+# IP Build 2548770 on Fri May 24 18:01:18 MDT 2019
+# Start of session at: Wed Nov  8 14:24:03 2023
+# Process ID: 109828
+# Current directory: /home/saadwaheed/Desktop/10x/trainings/TCPs/c6/gpio-v2.0/gpio
+# Command line: vivado
+# Log file: /home/saadwaheed/Desktop/10x/trainings/TCPs/c6/gpio-v2.0/gpio/vivado.log
+# Journal file: /home/saadwaheed/Desktop/10x/trainings/TCPs/c6/gpio-v2.0/gpio/vivado.jou
+#-----------------------------------------------------------
+start_gui
+create_project managed_ip_project /home/saadwaheed/Desktop/10x/trainings/TCPs/c6/gpio-v2.0/gpio/managed_ip_project -part xc7a12ticsg325-1L -ip
+set_property target_simulator XSim [current_project]
+create_ip -name axi_gpio -vendor xilinx.com -library ip -version 2.0 -module_name axi_gpio_0 -dir /home/saadwaheed/Desktop/10x/trainings/TCPs/c6/gpio-v2.0/gpio
+set_property -dict [list CONFIG.C_IS_DUAL {0} CONFIG.C_ALL_INPUTS {0} CONFIG.C_INTERRUPT_PRESENT {1}] [get_ips axi_gpio_0]
+generate_target {instantiation_template} [get_files /home/saadwaheed/Desktop/10x/trainings/TCPs/c6/gpio-v2.0/gpio/axi_gpio_0/axi_gpio_0.xci]
+generate_target all [get_files  /home/saadwaheed/Desktop/10x/trainings/TCPs/c6/gpio-v2.0/gpio/axi_gpio_0/axi_gpio_0.xci]
+catch { config_ip_cache -export [get_ips -all axi_gpio_0] }
+export_ip_user_files -of_objects [get_files /home/saadwaheed/Desktop/10x/trainings/TCPs/c6/gpio-v2.0/gpio/axi_gpio_0/axi_gpio_0.xci] -no_script -sync -force -quiet
+create_ip_run [get_files -of_objects [get_fileset sources_1] /home/saadwaheed/Desktop/10x/trainings/TCPs/c6/gpio-v2.0/gpio/axi_gpio_0/axi_gpio_0.xci]
+launch_runs  axi_gpio_0_synth_1
+export_simulation -of_objects [get_files /home/saadwaheed/Desktop/10x/trainings/TCPs/c6/gpio-v2.0/gpio/axi_gpio_0/axi_gpio_0.xci] -directory /home/saadwaheed/Desktop/10x/trainings/TCPs/c6/gpio-v2.0/gpio/ip_user_files/sim_scripts -ip_user_files_dir /home/saadwaheed/Desktop/10x/trainings/TCPs/c6/gpio-v2.0/gpio/ip_user_files -ipstatic_source_dir /home/saadwaheed/Desktop/10x/trainings/TCPs/c6/gpio-v2.0/gpio/ip_user_files/ipstatic -lib_map_path [list {modelsim=/home/saadwaheed/Desktop/10x/trainings/TCPs/c6/gpio-v2.0/gpio/managed_ip_project/managed_ip_project.cache/compile_simlib/modelsim} {questa=/home/saadwaheed/Desktop/10x/trainings/TCPs/c6/gpio-v2.0/gpio/managed_ip_project/managed_ip_project.cache/compile_simlib/questa} {ies=/home/saadwaheed/Desktop/10x/trainings/TCPs/c6/gpio-v2.0/gpio/managed_ip_project/managed_ip_project.cache/compile_simlib/ies} {xcelium=/home/saadwaheed/Desktop/10x/trainings/TCPs/c6/gpio-v2.0/gpio/managed_ip_project/managed_ip_project.cache/compile_simlib/xcelium} {vcs=/home/saadwaheed/Desktop/10x/trainings/TCPs/c6/gpio-v2.0/gpio/managed_ip_project/managed_ip_project.cache/compile_simlib/vcs} {riviera=/home/saadwaheed/Desktop/10x/trainings/TCPs/c6/gpio-v2.0/gpio/managed_ip_project/managed_ip_project.cache/compile_simlib/riviera}] -use_ip_compiled_libs -force -quiet

@@ -1,0 +1,8 @@
+<?xml version="1.0"?>
+<Runs Version="1" Minor="0">
+	<Run Id="axi_gpio_0_synth_1" LaunchDir="/home/saadwaheed/Desktop/10x/trainings/TCPs/c6/gpio-v2.0/gpio/managed_ip_project/managed_ip_project.runs/axi_gpio_0_synth_1" FlowId="Vivado_Synthesis" FromStepId="vivado" ToStepId="vivado"/>
+	<Parameters>
+		<Parameter Name="runs.monitorLSFJobs" Val="true" Type="bool"/>
+	</Parameters>
+</Runs>
+
