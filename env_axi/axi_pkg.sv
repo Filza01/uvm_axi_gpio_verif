@@ -16,6 +16,8 @@ package axi_pkg;
  `include "rd_monitor.sv"
  `include "rd_agent.sv"
 
+ `include "multi_sequencer.sv"
+
  `include "axi_env.sv"
- `include "base_test.sv"
+//  `include "base_test.sv"
 endpackage

@@ -1,16 +1,15 @@
-import uvm_pkg::*;
-`include "uvm_macros.svh";
-import axi_pkg::*;
-import gpio_pkg::*;
+// import uvm_pkg::*;
+// `include "uvm_macros.svh";
+// import axi_pkg::*;
 
 module tb_top();
 
     bit clk, reset;
 
-    clk_rst_if clk_if (
-        .clk(clk),
-        .rst_n(reset)
-    );
+    // clk_rst_if clk_if (
+    //     .clk(clk),
+    //     .rst_n(reset)
+    // );
 
     axi_intf #(
         .C_S_AXI_ADDR_WIDTH  ( 9),
@@ -27,16 +26,50 @@ module tb_top();
     //     $dumpvars();
     // end
 
+    always #10 clk = ~clk;
+
     initial begin
-        $display("\t\tStarting the initial begin");
-        clk_if.set_active();
-        $display("\t\tClock is activated");
-        uvm_config_db#(virtual clk_rst_if  )::set(null,"*","clk_if",clk_if);
-        uvm_config_db#(virtual axi_intf )::set(null,"*","axi_if",axi_if); 
-        uvm_config_db#(virtual gpio_intf )::set(null,"*","gpio_if",gpio_if); 
-        $display("\t\tAll interfaces have been set");
-        run_test("base_test");
+        reset = 1;
+        @(posedge clk);
+        @(posedge clk);
+        axi_if.s_axi_awaddr = 4;
+        axi_if.s_axi_awvalid = 1;
+        axi_if.s_axi_wvalid = 1;
+        axi_if.s_axi_wdata = 32'h39af1292;
+        axi_if.s_axi_wstrb = 7'hff;
+        axi_if.s_axi_bready = 1;
+        wait(axi_if.s_axi_wready == 1);
+        @(posedge clk);
+        axi_if.s_axi_awvalid = 0;
+        axi_if.s_axi_wvalid = 0;
+        wait(axi_if.s_axi_bvalid == 1);
+        @(posedge clk);
+        axi_if.s_axi_bready = 0;
+
+        @(posedge clk);
+        @(posedge clk);
+
+        axi_if.s_axi_araddr = 4;
+        axi_if.s_axi_arvalid = 1;
+        axi_if.s_axi_rready = 1;
+        wait(axi_if.s_axi_arready == 1);
+        @(posedge clk);
+        axi_if.s_axi_arvalid = 0;
+        wait(axi_if.s_axi_rvalid == 1);
+        @(posedge clk);
+        axi_if.s_axi_rready = 0;
+
     end
+
+    // initial begin
+    //     $display("\t\tStarting the initial begin");
+    //     clk_if.set_active();
+    //     $display("\t\tClock is activated");
+    //     // uvm_config_db#(virtual clk_rst_if  ) :: set(null,"*","clk_if",clk_if);
+    //     // uvm_config_db#(virtual axi_intf ) :: set(null,"*","axi_if",axi_if); 
+    //     $display("\t\tAll interfaces have been set");
+    //     run_test("base_test");
+    // end
 
     // DUT instantiation
     axi_gpio #(

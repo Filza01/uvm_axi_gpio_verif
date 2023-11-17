@@ -20,9 +20,9 @@ class rd_monitor extends uvm_monitor;
   task run_phase(uvm_phase phase);
     forever begin
       axi_pkt=axi_seq_item::type_id::create("axi_pkt", this);
-      @(`MON_IF.s_axi_arready);
+      @(posedge `MON_IF.s_axi_arready);
       axi_pkt.s_axi_araddr = `MON_IF.s_axi_araddr;
-      @(`MON_IF.s_axi_rvalid);
+      @(posedge `MON_IF.s_axi_rvalid);
       if (`MON_IF.s_axi_rresp==0) begin
         axi_pkt.s_axi_rdata = `MON_IF.s_axi_rdata;
       end

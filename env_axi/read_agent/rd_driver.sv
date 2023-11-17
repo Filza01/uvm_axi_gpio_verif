@@ -30,13 +30,16 @@ class rd_driver extends uvm_driver #(axi_seq_item) ;
         `DRV_IF.s_axi_arvalid <= 1;
         `DRV_IF.s_axi_araddr <= axi_pkt.s_axi_araddr;
         wait(`DRV_IF.s_axi_arready==1);
+        axi_if.clk_pos(1);
+        `DRV_IF.s_axi_arvalid <= 0;
       end
 
       begin
         //Read Data Channel
         `DRV_IF.s_axi_rready <= 1;
         wait(`DRV_IF.s_axi_rvalid==1);
-        axi_pkt.s_axi_rdata = `DRV_IF.s_axi_rdata;
+        axi_if.clk_pos(1);
+        `DRV_IF.s_axi_rready <= 0;
       end
     join
     @(posedge vif.clk);

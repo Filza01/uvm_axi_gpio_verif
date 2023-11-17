@@ -26,21 +26,17 @@ class wr_driver extends uvm_driver #(axi_seq_item);
 
             `DRIV_IF.s_axi_awvalid <= 1;
             `DRIV_IF.s_axi_awaddr <= axi_inst.s_axi_awaddr;
-
-            @(axi_inst.s_axi_wready);
-
-            axi_if.clk_pos(1);
-            `DRIV_IF.s_axi_awvalid <= 0;
-            
             `DRIV_IF.s_axi_wvalid <= 1;
             `DRIV_IF.s_axi_wdata <= axi_inst.s_axi_wdata;
             `DRIV_IF.s_axi_wstrb <= axi_inst.s_axi_wstrb;
-
             `DRIV_IF.s_axi_bready <= 1;
 
+            wait(axi_inst.s_axi_wready==1);
             axi_if.clk_pos(1);
+            `DRIV_IF.s_axi_awvalid <= 0;
             `DRIV_IF.s_axi_wvalid <= 0;
 
+            wait(axi_inst.s_axi_bvalid==1);
             axi_if.clk_pos(1);
             `DRIV_IF.s_axi_bready <= 0;
 
