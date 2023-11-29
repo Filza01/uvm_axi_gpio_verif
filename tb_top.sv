@@ -1,26 +1,47 @@
 import uvm_pkg::*;
-`include "uvm_macros.svh";
-import axi_pkg::*;
-import gpio_pkg::*;
+`include "uvm_macros.svh"
+
+parameter C_S_AXI_ADDR_WIDTH = 9;
+parameter C_S_AXI_DATA_WIDTH = 32;
+
+`include "axi_intf.sv"
+// `include "gpio_intf.sv"
+`include "dv_macros.svh"
+`include "clk_rst_if.sv"
+
+`include "axi_env/axi_seq_item.sv"
+`include "axi_env/axi_seqs.sv"
+
+`include "axi_env/write_agent/wr_sequencer.sv"
+`include "axi_env/write_agent/wr_driver.sv"
+`include "axi_env/write_agent/wr_monitor.sv"
+`include "axi_env/write_agent/wr_agent.sv"
+
+`include "axi_env/read_agent/rd_sequencer.sv"
+`include "axi_env/read_agent/rd_driver.sv"
+`include "axi_env/read_agent/rd_monitor.sv"
+`include "axi_env/read_agent/rd_agent.sv"
+
+`include "axi_env/axi_env.sv"
+
+`include "base_test.sv"
+
 
 module tb_top();
 
-    bit clk, reset;
+    wire clk, reset;
 
     clk_rst_if clk_if (
         .clk(clk),
         .rst_n(reset)
     );
 
-    axi_intf #(
-        .C_S_AXI_ADDR_WIDTH  ( 9),
-        .C_S_AXI_DATA_WIDTH  (32)
-    ) axi_if (.clk(clk));
+    axi_intf axi_if (.clk(clk));
 
-    gpio_intf #(
-        .C_GPIO_WIDTH       ( 32),
-        .C_GPIO2_WIDTH      ( 32)
-    ) gpio_if (.clk(clk));
+    // gpio_intf #(
+    //     .C_GPIO_WIDTH       ( 32),
+    //     .C_GPIO2_WIDTH      ( 32)
+    // ) gpio_if (.clk(clk));
 
     // initial begin
     //     $dumpfile("waveform.vcd");
@@ -33,34 +54,13 @@ module tb_top();
         $display("\t\tClock is activated");
         uvm_config_db#(virtual clk_rst_if  )::set(null,"*","clk_if",clk_if);
         uvm_config_db#(virtual axi_intf )::set(null,"*","axi_if",axi_if); 
-        uvm_config_db#(virtual gpio_intf )::set(null,"*","gpio_if",gpio_if); 
+        // uvm_config_db#(virtual gpio_intf )::set(null,"*","gpio_if",gpio_if); 
         $display("\t\tAll interfaces have been set");
         run_test("base_test");
     end
 
     // DUT instantiation
-    axi_gpio #(
-        //System Parameter
-        .C_FAMILY                   (       "virtex7"),
-        // AXI Parameters
-        .C_S_AXI_ADDR_WIDTH         (               9),
-        .C_S_AXI_DATA_WIDTH         (              32),
-        // GPIO Parameter    
-        .C_GPIO_WIDTH               (              32),
-        .C_GPIO2_WIDTH              (              32),
-        .C_ALL_INPUTS               (               0), 
-        .C_ALL_INPUTS_2             (               0),
-
-        .C_ALL_OUTPUTS              (               0), 
-        .C_ALL_OUTPUTS_2            (               0),
-
-        .C_INTERRUPT_PRESENT 	    (               0),
-        .C_DOUT_DEFAULT             (    32'h00000000),
-        .C_TRI_DEFAULT              (    32'hFFFFFFFF),
-        .C_IS_DUAL                  (               0),
-        .C_DOUT_DEFAULT_2           (    32'h00000000),
-        .C_TRI_DEFAULT_2            (    32'hFFFFFFFF)
-    ) DUT (
+    axi_gpio_0 DUT (
         // AXI interface Signals --------------------------------------------------
         .s_axi_aclk                 (                   clk),
         .s_axi_aresetn              (                 reset),
@@ -87,14 +87,14 @@ module tb_top();
         .s_axi_rready               (   axi_if.s_axi_rready),
         
         // Interrupt---------------------------------------------------------------
-        .ip2intc_irpt               (  gpio_if.ip2intc_irpt),
+        .ip2intc_irpt              (),// (  gpio_if.ip2intc_irpt),
 
         // GPIO Signals------------------------------------------------------------
-        .gpio_io_i                  (     gpio_if.gpio_io_i),
-        .gpio_io_o                  (     gpio_if.gpio_io_o),
-        .gpio_io_t                  (     gpio_if.gpio_io_t),
-        .gpio2_io_i                 (    gpio_if.gpio2_io_i),
-        .gpio2_io_o                 (    gpio_if.gpio2_io_o),
-        .gpio2_io_t                 (    gpio_if.gpio2_io_t)
+        .gpio_io_i                 (),// (     gpio_if.gpio_io_i),
+        .gpio_io_o                 (),// (     gpio_if.gpio_io_o),
+        .gpio_io_t                 (),// (     gpio_if.gpio_io_t),
+        .gpio2_io_i                (),// (    gpio_if.gpio2_io_i),
+        .gpio2_io_o                (),// (    gpio_if.gpio2_io_o),
+        .gpio2_io_t                ()// (    gpio_if.gpio2_io_t)
     );
 endmodule

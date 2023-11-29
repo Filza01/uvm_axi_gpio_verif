@@ -1,5 +1,5 @@
-// import uvm_pkg::*;
-// `include "uvm_macros.svh";
+ import uvm_pkg::*;
+ `include "uvm_macros.svh";
 // import axi_pkg::*;
 
 module tb_top();
@@ -72,28 +72,7 @@ module tb_top();
     // end
 
     // DUT instantiation
-    axi_gpio #(
-        //System Parameter
-        .C_FAMILY                   (       "virtex7"),
-        // AXI Parameters
-        .C_S_AXI_ADDR_WIDTH         (               9),
-        .C_S_AXI_DATA_WIDTH         (              32),
-        // GPIO Parameter    
-        .C_GPIO_WIDTH               (              32),
-        .C_GPIO2_WIDTH              (              32),
-        .C_ALL_INPUTS               (               0), 
-        .C_ALL_INPUTS_2             (               0),
-
-        .C_ALL_OUTPUTS              (               0), 
-        .C_ALL_OUTPUTS_2            (               0),
-
-        .C_INTERRUPT_PRESENT 	    (               0),
-        .C_DOUT_DEFAULT             (    32'h00000000),
-        .C_TRI_DEFAULT              (    32'hFFFFFFFF),
-        .C_IS_DUAL                  (               0),
-        .C_DOUT_DEFAULT_2           (    32'h00000000),
-        .C_TRI_DEFAULT_2            (    32'hFFFFFFFF)
-    ) DUT (
+    axi_gpio_0 DUT (
         // AXI interface Signals --------------------------------------------------
         .s_axi_aclk                 (                   clk),
         .s_axi_aresetn              (                 reset),
