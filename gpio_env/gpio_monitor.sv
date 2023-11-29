@@ -26,13 +26,14 @@ class gpio_monitor extends uvm_monitor;
         forever begin
             `uvm_info(get_full_name,"GPIO monitor class started", UVM_NONE)
             gpio_inst = gpio_seq_item::type_id::create("gpio_inst",this);
-            // axi_if.clk_pos(3);
-
-            // i think i have to do bit by bit
-
+            gpio_if.clk_pos(3);
+            // gpio_inst.gpio_io_i = `MON_IF.gpio_io_i;
+            // gpio_inst.gpio2_io_i = `MON_IF.gpio2_io_i;
+            gpio_inst.gpio_io_t = `MON_IF.gpio_io_t;
+            gpio_inst.gpio_io_o = `MON_IF.gpio_io_o;
+            // gpio_inst.gpio2_io_o = `MON_IF.gpio2_io_o;
             gpio_port.write(gpio_inst);
-            // `uvm_info(get_full_name(),$sformatf("In GPIO monitor, \n\t\t s_axi_awaddr = %h, \n\t\t s_axi_awready = %h, \n\t\t s_axi_awvalid = %h, \n\t\t s_axi_wready = %h, \n\t\t s_axi_wdata = %h, \n\t\t s_axi_wstrb = %h, \n\t\t s_axi_wvalid = %h, \n\t\t s_axi_bready = %h, \n\t\t s_axi_bresp = %h, \n\t\t s_axi_bvalid = %h", `MON_IF.s_axi_awaddr, `MON_IF.s_axi_awready, `MON_IF.s_axi_awvalid, `MON_IF.s_axi_wready, `MON_IF.s_axi_wdata, `MON_IF.s_axi_wstrb, `MON_IF.s_axi_wvalid, `MON_IF.s_axi_bready, `MON_IF.s_axi_bresp, `MON_IF.s_axi_bvalid), UVM_NONE) 
-            // `uvm_info(get_full_name,"Data written to port item", UVM_NONE)
+            `uvm_info(get_full_name,"Data written to port item", UVM_NONE)
             `uvm_info(get_full_name,"GPIO monitor class ended", UVM_NONE)
         end
     endtask

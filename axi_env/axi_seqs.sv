@@ -54,7 +54,7 @@ class axi_write_seq_tir extends axi_base_seq;
         `uvm_info(get_type_name(), "Executing AXI write TIR sequence", UVM_LOW)
 
         axi_pkt.s_axi_awaddr = 4;
-        axi_pkt.s_axi_wdata = 0;
+        axi_pkt.s_axi_wdata = 32'hffffffff;
         axi_pkt.s_axi_wstrb = 4'hf;
 
         `uvm_info(get_type_name(), "AXI write TIR sequence ended", UVM_LOW)
@@ -97,7 +97,7 @@ class axi_write_seq_data extends axi_base_seq;
         `uvm_info(get_type_name(), "Executing AXI write DATA sequence", UVM_LOW)
 
         axi_pkt.s_axi_awaddr = 0;
-        axi_pkt.s_axi_wdata = 53743;
+        axi_pkt.s_axi_wdata = 32'h34343434;
         axi_pkt.s_axi_wstrb = 4'hf;
 
         `uvm_info(get_type_name(), "AXI write DATA sequence ended", UVM_LOW)

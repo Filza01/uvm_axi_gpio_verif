@@ -1,0 +1,196 @@
+Vivado Simulator 2020.1
+Time resolution is 1 ps
+UVM_INFO /proj/xbuilds/SWIP/2020.1_0223_2001/installs/lin64/Vivado/2020.1/data/system_verilog/uvm_1.2/xlnx_uvm_package.sv(18601) @ 0: reporter [UVM/RELNOTES] 
+      (Specify +UVM_NO_RELNOTES to turn off this notice)
+  with `UVM_OBJECT_DO_NOT_NEED_CONSTRUCTOR undefined.
+
+  You are using a version of the UVM library that has been compiled
+  with `UVM_NO_DEPRECATED undefined.
+
+  You are using a version of the UVM library that has been compiled
+
+  ***********       IMPORTANT RELEASE NOTES         ************
+----------------------------------------------------------------
+(C) 2013-2014 NVIDIA Corporation
+(C) 2011-2013 Cypress Semiconductor Corp.
+(C) 2006-2014 Synopsys, Inc.
+(C) 2007-2014 Cadence Design Systems, Inc.
+(C) 2007-2014 Mentor Graphics Corporation
+
+
+----------------------------------------------------------------
+
+		Starting the initial begin
+		Clock is activated
+		All interfaces have been set
+UVM_INFO @ 0: reporter [RNTST] Running test base_test...
+------------------------- Topology Report -------------------------
+UVM_INFO /proj/xbuilds/SWIP/2020.1_0223_2001/installs/lin64/Vivado/2020.1/data/system_verilog/uvm_1.2/xlnx_uvm_package.sv(18752) @ 0: reporter [UVMTOP] UVM testbench topology:
+--------------------------------------------------------------
+Name                       Type                    Size  Value
+--------------------------------------------------------------
+uvm_test_top               base_test               -     @349 
+  env_axi                  axi_env                 -     @395 
+    read_agent             rd_agent                -     @422 
+      driver               rd_driver               -     @588 
+        rsp_port           uvm_analysis_port       -     @607 
+        seq_item_port      uvm_seq_item_pull_port  -     @597 
+      monitor              rd_monitor              -     @432 
+        read_port          uvm_analysis_port       -     @441 
+      sequencer            rd_sequencer            -     @451 
+        rsp_export         uvm_analysis_export     -     @460 
+        seq_item_export    uvm_seq_item_pull_imp   -     @578 
+        arbitration_queue  array                   0     -    
+        lock_queue         array                   0     -    
+        num_last_reqs      integral                32    'd1  
+        num_last_rsps      integral                32    'd1  
+    write_agent            wr_agent                -     @413 
+      drv                  wr_driver               -     @762 
+        rsp_port           uvm_analysis_port       -     @781 
+        seq_item_port      uvm_seq_item_pull_port  -     @771 
+      mon                  wr_monitor              -     @791 
+        write_port         uvm_analysis_port       -     @802 
+      seqr                 wr_sequencer            -     @625 
+        rsp_export         uvm_analysis_export     -     @634 
+        seq_item_export    uvm_seq_item_pull_imp   -     @752 
+        arbitration_queue  array                   0     -    
+        lock_queue         array                   0     -    
+        num_last_reqs      integral                32    'd1  
+        num_last_rsps      integral                32    'd1  
+  env_gpio                 gpio_env                -     @404 
+    agent                  gpio_agent              -     @817 
+      drv                  gpio_driver             -     @964 
+        rsp_port           uvm_analysis_port       -     @983 
+        seq_item_port      uvm_seq_item_pull_port  -     @973 
+      mon                  gpio_monitor            -     @993 
+        gpio_port          uvm_analysis_port       -     @1004
+      seqr                 gpio_sequencer          -     @827 
+        rsp_export         uvm_analysis_export     -     @836 
+        seq_item_export    uvm_seq_item_pull_imp   -     @954 
+        arbitration_queue  array                   0     -    
+        lock_queue         array                   0     -    
+        num_last_reqs      integral                32    'd1  
+        num_last_rsps      integral                32    'd1  
+--------------------------------------------------------------
+
+UVM_INFO /proj/xbuilds/SWIP/2020.1_0223_2001/installs/lin64/Vivado/2020.1/data/system_verilog/uvm_1.2/xlnx_uvm_package.sv(20867) @ 0: reporter [UVM/COMP/NAMECHECK] This implementation of the component name checks requires DPI to be enabled
+UVM_INFO ../../../../../base_test.sv(50) @ 0: uvm_test_top [uvm_test_top] <run_phase> started, objection raised.
+apply_reset() started
+UVM_INFO ../../../../../gpio_env/gpio_monitor.sv(27) @ 0: uvm_test_top.env_gpio.agent.mon [uvm_test_top.env_gpio.agent.mon] GPIO monitor class started
+UVM_INFO ../../../../../gpio_env/gpio_driver.sv(23) @ 0: uvm_test_top.env_gpio.agent.drv [uvm_test_top.env_gpio.agent.drv] GPIO Driver Started
+UVM_INFO ../../../../../axi_env/write_agent/wr_monitor.sv(27) @ 0: uvm_test_top.env_axi.write_agent.mon [uvm_test_top.env_axi.write_agent.mon] AXI Write monitor class started
+UVM_INFO ../../../../../axi_env/write_agent/wr_driver.sv(23) @ 0: uvm_test_top.env_axi.write_agent.drv [uvm_test_top.env_axi.write_agent.drv] AXI Write Driver Started
+UVM_INFO ../../../../../axi_env/read_agent/rd_driver.sv(22) @ 0: uvm_test_top.env_axi.read_agent.driver [uvm_test_top.env_axi.read_agent.driver] AXI Read Driver Started
+UVM_INFO ../../../../../gpio_env/gpio_monitor.sv(41) @ 80000: uvm_test_top.env_gpio.agent.mon [uvm_test_top.env_gpio.agent.mon] Data written to port item
+UVM_INFO ../../../../../gpio_env/gpio_monitor.sv(42) @ 80000: uvm_test_top.env_gpio.agent.mon [uvm_test_top.env_gpio.agent.mon] GPIO monitor class ended
+UVM_INFO ../../../../../gpio_env/gpio_monitor.sv(27) @ 80000: uvm_test_top.env_gpio.agent.mon [uvm_test_top.env_gpio.agent.mon] GPIO monitor class started
+UVM_INFO ../../../../../gpio_env/gpio_monitor.sv(41) @ 140000: uvm_test_top.env_gpio.agent.mon [uvm_test_top.env_gpio.agent.mon] Data written to port item
+UVM_INFO ../../../../../gpio_env/gpio_monitor.sv(42) @ 140000: uvm_test_top.env_gpio.agent.mon [uvm_test_top.env_gpio.agent.mon] GPIO monitor class ended
+UVM_INFO ../../../../../gpio_env/gpio_monitor.sv(27) @ 140000: uvm_test_top.env_gpio.agent.mon [uvm_test_top.env_gpio.agent.mon] GPIO monitor class started
+UVM_INFO ../../../../../gpio_env/gpio_monitor.sv(41) @ 200000: uvm_test_top.env_gpio.agent.mon [uvm_test_top.env_gpio.agent.mon] Data written to port item
+UVM_INFO ../../../../../gpio_env/gpio_monitor.sv(42) @ 200000: uvm_test_top.env_gpio.agent.mon [uvm_test_top.env_gpio.agent.mon] GPIO monitor class ended
+UVM_INFO ../../../../../gpio_env/gpio_monitor.sv(27) @ 200000: uvm_test_top.env_gpio.agent.mon [uvm_test_top.env_gpio.agent.mon] GPIO monitor class started
+apply_reset() ended
+UVM_INFO ../../../../../axi_env/axi_seqs.sv(54) @ 220000: uvm_test_top.env_axi.write_agent.seqr@@axi_wr_1 [axi_write_seq_tir] Executing AXI write TIR sequence
+UVM_INFO ../../../../../axi_env/axi_seqs.sv(60) @ 220000: uvm_test_top.env_axi.write_agent.seqr@@axi_wr_1 [axi_write_seq_tir] AXI write TIR sequence ended
+UVM_INFO ../../../../../gpio_env/gpio_monitor.sv(41) @ 260000: uvm_test_top.env_gpio.agent.mon [uvm_test_top.env_gpio.agent.mon] Data written to port item
+UVM_INFO ../../../../../gpio_env/gpio_monitor.sv(42) @ 260000: uvm_test_top.env_gpio.agent.mon [uvm_test_top.env_gpio.agent.mon] GPIO monitor class ended
+UVM_INFO ../../../../../gpio_env/gpio_monitor.sv(27) @ 260000: uvm_test_top.env_gpio.agent.mon [uvm_test_top.env_gpio.agent.mon] GPIO monitor class started
+UVM_INFO ../../../../../gpio_env/gpio_monitor.sv(41) @ 320000: uvm_test_top.env_gpio.agent.mon [uvm_test_top.env_gpio.agent.mon] Data written to port item
+UVM_INFO ../../../../../gpio_env/gpio_monitor.sv(42) @ 320000: uvm_test_top.env_gpio.agent.mon [uvm_test_top.env_gpio.agent.mon] GPIO monitor class ended
+UVM_INFO ../../../../../gpio_env/gpio_monitor.sv(27) @ 320000: uvm_test_top.env_gpio.agent.mon [uvm_test_top.env_gpio.agent.mon] GPIO monitor class started
+UVM_INFO ../../../../../gpio_env/gpio_monitor.sv(41) @ 380000: uvm_test_top.env_gpio.agent.mon [uvm_test_top.env_gpio.agent.mon] Data written to port item
+UVM_INFO ../../../../../gpio_env/gpio_monitor.sv(42) @ 380000: uvm_test_top.env_gpio.agent.mon [uvm_test_top.env_gpio.agent.mon] GPIO monitor class ended
+UVM_INFO ../../../../../gpio_env/gpio_monitor.sv(27) @ 380000: uvm_test_top.env_gpio.agent.mon [uvm_test_top.env_gpio.agent.mon] GPIO monitor class started
+UVM_INFO ../../../../../axi_env/write_agent/wr_driver.sv(28) @ 400000: uvm_test_top.env_axi.write_agent.drv [uvm_test_top.env_axi.write_agent.drv] AXI Write Driver done
+UVM_INFO ../../../../../axi_env/write_agent/wr_driver.sv(23) @ 400000: uvm_test_top.env_axi.write_agent.drv [uvm_test_top.env_axi.write_agent.drv] AXI Write Driver Started
+UVM_INFO ../../../../../axi_env/axi_seqs.sv(97) @ 400000: uvm_test_top.env_axi.write_agent.seqr@@axi_wr_1 [axi_write_seq_data] Executing AXI write DATA sequence
+UVM_INFO ../../../../../axi_env/axi_seqs.sv(103) @ 400000: uvm_test_top.env_axi.write_agent.seqr@@axi_wr_1 [axi_write_seq_data] AXI write DATA sequence ended
+UVM_INFO ../../../../../gpio_env/gpio_monitor.sv(41) @ 440000: uvm_test_top.env_gpio.agent.mon [uvm_test_top.env_gpio.agent.mon] Data written to port item
+UVM_INFO ../../../../../gpio_env/gpio_monitor.sv(42) @ 440000: uvm_test_top.env_gpio.agent.mon [uvm_test_top.env_gpio.agent.mon] GPIO monitor class ended
+UVM_INFO ../../../../../gpio_env/gpio_monitor.sv(27) @ 440000: uvm_test_top.env_gpio.agent.mon [uvm_test_top.env_gpio.agent.mon] GPIO monitor class started
+UVM_INFO ../../../../../gpio_env/gpio_monitor.sv(41) @ 500000: uvm_test_top.env_gpio.agent.mon [uvm_test_top.env_gpio.agent.mon] Data written to port item
+UVM_INFO ../../../../../gpio_env/gpio_monitor.sv(42) @ 500000: uvm_test_top.env_gpio.agent.mon [uvm_test_top.env_gpio.agent.mon] GPIO monitor class ended
+UVM_INFO ../../../../../gpio_env/gpio_monitor.sv(27) @ 500000: uvm_test_top.env_gpio.agent.mon [uvm_test_top.env_gpio.agent.mon] GPIO monitor class started
+UVM_INFO ../../../../../axi_env/write_agent/wr_monitor.sv(52) @ 520000: uvm_test_top.env_axi.write_agent.mon [uvm_test_top.env_axi.write_agent.mon] AXI Write monitor class ended
+UVM_INFO ../../../../../axi_env/write_agent/wr_monitor.sv(27) @ 520000: uvm_test_top.env_axi.write_agent.mon [uvm_test_top.env_axi.write_agent.mon] AXI Write monitor class started
+UVM_INFO ../../../../../gpio_env/gpio_monitor.sv(41) @ 560000: uvm_test_top.env_gpio.agent.mon [uvm_test_top.env_gpio.agent.mon] Data written to port item
+UVM_INFO ../../../../../gpio_env/gpio_monitor.sv(42) @ 560000: uvm_test_top.env_gpio.agent.mon [uvm_test_top.env_gpio.agent.mon] GPIO monitor class ended
+UVM_INFO ../../../../../gpio_env/gpio_monitor.sv(27) @ 560000: uvm_test_top.env_gpio.agent.mon [uvm_test_top.env_gpio.agent.mon] GPIO monitor class started
+UVM_INFO ../../../../../axi_env/write_agent/wr_driver.sv(28) @ 560000: uvm_test_top.env_axi.write_agent.drv [uvm_test_top.env_axi.write_agent.drv] AXI Write Driver done
+UVM_INFO ../../../../../axi_env/write_agent/wr_driver.sv(23) @ 560000: uvm_test_top.env_axi.write_agent.drv [uvm_test_top.env_axi.write_agent.drv] AXI Write Driver Started
+UVM_INFO ../../../../../axi_env/axi_seqs.sv(119) @ 560000: uvm_test_top.env_axi.read_agent.sequencer@@axi_rd_1 [axi_read_seq_tri] Executing AXI read TRI sequence
+UVM_INFO ../../../../../axi_env/axi_seqs.sv(123) @ 560000: uvm_test_top.env_axi.read_agent.sequencer@@axi_rd_1 [axi_read_seq_tri] AXI read TRI sequence ended
+UVM_INFO ../../../../../gpio_env/gpio_monitor.sv(41) @ 620000: uvm_test_top.env_gpio.agent.mon [uvm_test_top.env_gpio.agent.mon] Data written to port item
+UVM_INFO ../../../../../gpio_env/gpio_monitor.sv(42) @ 620000: uvm_test_top.env_gpio.agent.mon [uvm_test_top.env_gpio.agent.mon] GPIO monitor class ended
+UVM_INFO ../../../../../gpio_env/gpio_monitor.sv(27) @ 620000: uvm_test_top.env_gpio.agent.mon [uvm_test_top.env_gpio.agent.mon] GPIO monitor class started
+UVM_INFO ../../../../../gpio_env/gpio_monitor.sv(41) @ 680000: uvm_test_top.env_gpio.agent.mon [uvm_test_top.env_gpio.agent.mon] Data written to port item
+UVM_INFO ../../../../../gpio_env/gpio_monitor.sv(42) @ 680000: uvm_test_top.env_gpio.agent.mon [uvm_test_top.env_gpio.agent.mon] GPIO monitor class ended
+UVM_INFO ../../../../../gpio_env/gpio_monitor.sv(27) @ 680000: uvm_test_top.env_gpio.agent.mon [uvm_test_top.env_gpio.agent.mon] GPIO monitor class started
+UVM_INFO ../../../../../axi_env/read_agent/rd_driver.sv(26) @ 720000: uvm_test_top.env_axi.read_agent.driver [uvm_test_top.env_axi.read_agent.driver] AXI Read Driver done
+UVM_INFO ../../../../../axi_env/read_agent/rd_driver.sv(22) @ 720000: uvm_test_top.env_axi.read_agent.driver [uvm_test_top.env_axi.read_agent.driver] AXI Read Driver Started
+UVM_INFO ../../../../../axi_env/axi_seqs.sv(77) @ 720000: uvm_test_top.env_axi.read_agent.sequencer@@axi_rd_2 [axi_read_seq_data] Executing AXI read DATA sequence
+UVM_INFO ../../../../../axi_env/axi_seqs.sv(81) @ 720000: uvm_test_top.env_axi.read_agent.sequencer@@axi_rd_2 [axi_read_seq_data] AXI read DATA sequence ended
+UVM_INFO ../../../../../gpio_env/gpio_monitor.sv(41) @ 740000: uvm_test_top.env_gpio.agent.mon [uvm_test_top.env_gpio.agent.mon] Data written to port item
+UVM_INFO ../../../../../gpio_env/gpio_monitor.sv(42) @ 740000: uvm_test_top.env_gpio.agent.mon [uvm_test_top.env_gpio.agent.mon] GPIO monitor class ended
+UVM_INFO ../../../../../gpio_env/gpio_monitor.sv(27) @ 740000: uvm_test_top.env_gpio.agent.mon [uvm_test_top.env_gpio.agent.mon] GPIO monitor class started
+UVM_INFO ../../../../../gpio_env/gpio_monitor.sv(41) @ 800000: uvm_test_top.env_gpio.agent.mon [uvm_test_top.env_gpio.agent.mon] Data written to port item
+UVM_INFO ../../../../../gpio_env/gpio_monitor.sv(42) @ 800000: uvm_test_top.env_gpio.agent.mon [uvm_test_top.env_gpio.agent.mon] GPIO monitor class ended
+UVM_INFO ../../../../../gpio_env/gpio_monitor.sv(27) @ 800000: uvm_test_top.env_gpio.agent.mon [uvm_test_top.env_gpio.agent.mon] GPIO monitor class started
+UVM_INFO ../../../../../gpio_env/gpio_monitor.sv(41) @ 860000: uvm_test_top.env_gpio.agent.mon [uvm_test_top.env_gpio.agent.mon] Data written to port item
+UVM_INFO ../../../../../gpio_env/gpio_monitor.sv(42) @ 860000: uvm_test_top.env_gpio.agent.mon [uvm_test_top.env_gpio.agent.mon] GPIO monitor class ended
+UVM_INFO ../../../../../gpio_env/gpio_monitor.sv(27) @ 860000: uvm_test_top.env_gpio.agent.mon [uvm_test_top.env_gpio.agent.mon] GPIO monitor class started
+UVM_INFO ../../../../../axi_env/read_agent/rd_driver.sv(26) @ 880000: uvm_test_top.env_axi.read_agent.driver [uvm_test_top.env_axi.read_agent.driver] AXI Read Driver done
+UVM_INFO ../../../../../axi_env/read_agent/rd_driver.sv(22) @ 880000: uvm_test_top.env_axi.read_agent.driver [uvm_test_top.env_axi.read_agent.driver] AXI Read Driver Started
+UVM_INFO ../../../../../gpio_env/gpio_seqs.sv(24) @ 880000: uvm_test_top.env_gpio.agent.seqr@@gpio_i [gpio_seq] Executing GPIO sequence
+UVM_INFO ../../../../../gpio_env/gpio_seqs.sv(28) @ 880000: uvm_test_top.env_gpio.agent.seqr@@gpio_i [gpio_seq] GPIO sequence ended
+UVM_INFO ../../../../../gpio_env/gpio_monitor.sv(41) @ 920000: uvm_test_top.env_gpio.agent.mon [uvm_test_top.env_gpio.agent.mon] Data written to port item
+UVM_INFO ../../../../../gpio_env/gpio_monitor.sv(42) @ 920000: uvm_test_top.env_gpio.agent.mon [uvm_test_top.env_gpio.agent.mon] GPIO monitor class ended
+UVM_INFO ../../../../../gpio_env/gpio_monitor.sv(27) @ 920000: uvm_test_top.env_gpio.agent.mon [uvm_test_top.env_gpio.agent.mon] GPIO monitor class started
+UVM_INFO ../../../../../gpio_env/gpio_driver.sv(44) @ 940000: uvm_test_top.env_gpio.agent.drv [uvm_test_top.env_gpio.agent.drv] GPIO Driver done
+UVM_INFO ../../../../../gpio_env/gpio_driver.sv(23) @ 940000: uvm_test_top.env_gpio.agent.drv [uvm_test_top.env_gpio.agent.drv] GPIO Driver Started
+UVM_INFO ../../../../../axi_env/axi_seqs.sv(77) @ 940000: uvm_test_top.env_axi.read_agent.sequencer@@axi_rd_2 [axi_read_seq_data] Executing AXI read DATA sequence
+UVM_INFO ../../../../../axi_env/axi_seqs.sv(81) @ 940000: uvm_test_top.env_axi.read_agent.sequencer@@axi_rd_2 [axi_read_seq_data] AXI read DATA sequence ended
+UVM_INFO ../../../../../gpio_env/gpio_monitor.sv(41) @ 980000: uvm_test_top.env_gpio.agent.mon [uvm_test_top.env_gpio.agent.mon] Data written to port item
+UVM_INFO ../../../../../gpio_env/gpio_monitor.sv(42) @ 980000: uvm_test_top.env_gpio.agent.mon [uvm_test_top.env_gpio.agent.mon] GPIO monitor class ended
+UVM_INFO ../../../../../gpio_env/gpio_monitor.sv(27) @ 980000: uvm_test_top.env_gpio.agent.mon [uvm_test_top.env_gpio.agent.mon] GPIO monitor class started
+UVM_INFO ../../../../../gpio_env/gpio_monitor.sv(41) @ 1040000: uvm_test_top.env_gpio.agent.mon [uvm_test_top.env_gpio.agent.mon] Data written to port item
+UVM_INFO ../../../../../gpio_env/gpio_monitor.sv(42) @ 1040000: uvm_test_top.env_gpio.agent.mon [uvm_test_top.env_gpio.agent.mon] GPIO monitor class ended
+UVM_INFO ../../../../../gpio_env/gpio_monitor.sv(27) @ 1040000: uvm_test_top.env_gpio.agent.mon [uvm_test_top.env_gpio.agent.mon] GPIO monitor class started
+UVM_INFO ../../../../../gpio_env/gpio_monitor.sv(41) @ 1100000: uvm_test_top.env_gpio.agent.mon [uvm_test_top.env_gpio.agent.mon] Data written to port item
+UVM_INFO ../../../../../gpio_env/gpio_monitor.sv(42) @ 1100000: uvm_test_top.env_gpio.agent.mon [uvm_test_top.env_gpio.agent.mon] GPIO monitor class ended
+UVM_INFO ../../../../../gpio_env/gpio_monitor.sv(27) @ 1100000: uvm_test_top.env_gpio.agent.mon [uvm_test_top.env_gpio.agent.mon] GPIO monitor class started
+UVM_INFO ../../../../../axi_env/read_agent/rd_driver.sv(26) @ 1100000: uvm_test_top.env_axi.read_agent.driver [uvm_test_top.env_axi.read_agent.driver] AXI Read Driver done
+UVM_INFO ../../../../../axi_env/read_agent/rd_driver.sv(22) @ 1100000: uvm_test_top.env_axi.read_agent.driver [uvm_test_top.env_axi.read_agent.driver] AXI Read Driver Started
+UVM_INFO ../../../../../gpio_env/gpio_monitor.sv(41) @ 1160000: uvm_test_top.env_gpio.agent.mon [uvm_test_top.env_gpio.agent.mon] Data written to port item
+UVM_INFO ../../../../../gpio_env/gpio_monitor.sv(42) @ 1160000: uvm_test_top.env_gpio.agent.mon [uvm_test_top.env_gpio.agent.mon] GPIO monitor class ended
+UVM_INFO ../../../../../gpio_env/gpio_monitor.sv(27) @ 1160000: uvm_test_top.env_gpio.agent.mon [uvm_test_top.env_gpio.agent.mon] GPIO monitor class started
+UVM_INFO ../../../../../base_test.sv(68) @ 1200000: uvm_test_top [uvm_test_top] <run_phase> finished, objection dropped.
+UVM_INFO /proj/xbuilds/SWIP/2020.1_0223_2001/installs/lin64/Vivado/2020.1/data/system_verilog/uvm_1.2/xlnx_uvm_package.sv(19968) @ 1200000: reporter [TEST_DONE] 'run' phase is ready to proceed to the 'extract' phase
+UVM_INFO /proj/xbuilds/SWIP/2020.1_0223_2001/installs/lin64/Vivado/2020.1/data/system_verilog/uvm_1.2/xlnx_uvm_package.sv(13673) @ 1200000: reporter [UVM/REPORT/SERVER] [uvm_test_top.env_gpio.agent.mon]    58
+[uvm_test_top.env_gpio.agent.drv]     3
+[uvm_test_top.env_axi.write_agent.mon]     3
+[uvm_test_top.env_axi.write_agent.drv]     5
+[uvm_test_top.env_axi.read_agent.driver]     7
+[uvm_test_top]     2
+[gpio_seq]     2
+[axi_write_seq_tir]     2
+[axi_write_seq_data]     2
+[axi_read_seq_tri]     2
+[axi_read_seq_data]     4
+[UVMTOP]     1
+[UVM/RELNOTES]     1
+[UVM/COMP/NAMECHECK]     1
+[TEST_DONE]     1
+[RNTST]     1
+** Report counts by id
+UVM_FATAL :    0
+UVM_ERROR :    0
+UVM_WARNING :    0
+UVM_INFO :   95
+** Report counts by severity
+
+--- UVM Report Summary ---
+
+
+Stopped at time : 1200444 ps : File "/opt/Xilinx/Vivado/2020.1/data/system_verilog/uvm_1.2/xlnx_uvm_package.sv" Line 18698

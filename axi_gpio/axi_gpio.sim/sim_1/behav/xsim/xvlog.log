@@ -1,0 +1,4 @@
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/home/user100/SV/uvm_axi_gpio_verif/tb_top.sv" into library xil_defaultlib
+WARNING: [VRFC 10-3507] macro 'DRIV_IF' redefined [../../../../../gpio_env/gpio_driver.sv:1]
+WARNING: [VRFC 10-3507] macro 'MON_IF' redefined [../../../../../gpio_env/gpio_monitor.sv:1]
+INFO: [VRFC 10-311] analyzing module tb_top

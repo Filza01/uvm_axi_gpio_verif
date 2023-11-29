@@ -1,4 +1,4 @@
-interface gpio_intf #(C_GPIO_WIDTH = 32, C_GPIO2_WIDTH = 32) (input clk);
+interface gpio_intf (input clk);
     // Interrupt---------------------------------------------------------------
     logic                       ip2intc_irpt;          
 

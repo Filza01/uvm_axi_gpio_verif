@@ -1,0 +1,45 @@
+#-----------------------------------------------------------
+# Vivado v2020.1 (64-bit)
+# SW Build 2902540 on Wed May 27 19:54:35 MDT 2020
+# IP Build 2902112 on Wed May 27 22:43:36 MDT 2020
+# Start of session at: Wed Nov 29 16:40:17 2023
+# Process ID: 144881
+# Current directory: /home/user100/SV/uvm_axi_gpio_verif
+# Command line: vivado
+# Log file: /home/user100/SV/uvm_axi_gpio_verif/vivado.log
+# Journal file: /home/user100/SV/uvm_axi_gpio_verif/vivado.jou
+#-----------------------------------------------------------
+start_gui
+open_project /home/user100/SV/uvm_axi_gpio_verif/axi_gpio/axi_gpio.xpr
+update_compile_order -fileset sources_1
+launch_simulation
+source tb_top.tcl
+current_wave_config {Untitled 1}
+add_wave {{/tb_top/DUT}} 
+current_wave_config {Untitled 1}
+add_wave {{/tb_top/gpio_if}} 
+current_wave_config {Untitled 1}
+add_wave {{/tb_top/axi_if}} 
+run all
+restart
+run all
+save_wave_config {/home/user100/SV/uvm_axi_gpio_verif/axi_gpio/tb_top_behav1.wcfg}
+relaunch_sim
+relaunch_sim
+relaunch_sim
+run all
+relaunch_sim
+relaunch_sim
+relaunch_sim
+run all
+relaunch_sim
+run all
+relaunch_sim
+run all
+save_wave_config {/home/user100/SV/uvm_axi_gpio_verif/axi_gpio/tb_top_behav1.wcfg}
+set_property -name {xsim.simulate.runtime} -value {} -objects [get_filesets sim_1]
+save_wave_config {/home/user100/SV/uvm_axi_gpio_verif/axi_gpio/tb_top_behav1.wcfg}
+relaunch_sim
+relaunch_sim
+run all
+close_sim

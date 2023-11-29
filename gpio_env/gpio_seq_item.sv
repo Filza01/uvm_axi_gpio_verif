@@ -1,5 +1,9 @@
-class gpio_seq_item extends uvm_sequence_item #(C_GPIO2_WIDTH = 32. C_GPIO_WIDTH = 32);
+class gpio_seq_item extends uvm_sequence_item;
     `uvm_object_utils (gpio_seq_item) //factory registeration
+
+    function new(string name="axi_seq_item");
+        super.new(name);
+    endfunction
     
     // Interrupt---------------------------------------------------------------
     logic                       ip2intc_irpt;          

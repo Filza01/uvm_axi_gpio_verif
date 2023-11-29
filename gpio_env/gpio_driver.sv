@@ -24,8 +24,21 @@ class gpio_driver extends uvm_driver #(gpio_seq_item);
 
             seq_item_port.get_next_item(gpio_inst);  // Get the next item from sequencer
 
-            // `DRIV_IF. i think i have to drive it bit by bit
+            // foreach (gpio_inst.gpio_io_i[i]) begin
+            //     if (gpio_inst.gpio_io_t[i]==1'b1) begin
+            //         `DRIV_IF.gpio_io_i[i] <= gpio_inst.gpio_io_i[i];
+            //     end
+            // end
 
+            // foreach (gpio_inst.gpio2_io_i[i]) begin
+            //     if (gpio_inst.gpio2_io_t[i]==1'b1) begin
+            //         `DRIV_IF.gpio2_io_i[i] <= gpio_inst.gpio2_io_i[i];
+            //     end
+            // end
+
+            `DRIV_IF.gpio_io_i <= gpio_inst.gpio_io_i;
+            // `DRIV_IF.gpio2_io_i <= gpio_inst.gpio2_io_i;
+            gpio_if.clk_pos(3);
             seq_item_port.item_done();
             // `uvm_info(get_full_name,$sformatf("In GPIO driver, \n\t\t s_axi_awvalid = %h, \n\t\t s_axi_awaddr = %h, \n\t\t s_axi_wvalid = %h, \n\t\t s_axi_wdata = %h, \n\t\t s_axi_wstrb = %h, \n\t\t s_axi_bready = %h", axi_inst.s_axi_awvalid, axi_inst.s_axi_awaddr, axi_inst.s_axi_wvalid, axi_inst.s_axi_wdata, axi_inst.s_axi_bready), UVM_NONE)
             `uvm_info(get_full_name(), "GPIO Driver done", UVM_NONE)

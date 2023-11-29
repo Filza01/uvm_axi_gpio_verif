@@ -1,0 +1,76 @@
+Vivado Simulator 2020.1
+Copyright 1986-1999, 2001-2020 Xilinx, Inc. All Rights Reserved.
+Running: /opt/Xilinx/Vivado/2020.1/bin/unwrapped/lnx64.o/xelab -wto 20a5411e855f447d8963cd9ff63f6e93 --incr --debug typical --relax --mt 8 -L axi_lite_ipif_v3_0_4 -L lib_cdc_v1_0_2 -L interrupt_control_v3_1_4 -L axi_gpio_v2_0_23 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip -L xpm --snapshot tb_top_behav xil_defaultlib.tb_top xil_defaultlib.glbl -log elaborate.log -L uvm 
+Using 8 slave threads.
+Starting static elaboration
+Pass Through NonSizing Optimizer
+WARNING: [VRFC 10-696] first argument of $fatal is invalid, expecting 0, 1 or 2 [../../../../../clk_rst_if.sv:162]
+WARNING: [VRFC 10-696] first argument of $fatal is invalid, expecting 0, 1 or 2 [../../../../../clk_rst_if.sv:169]
+Completed static elaboration
+INFO: [XSIM 43-4329] Assuming default value 1 for the first arguement of $fatal at Line 162, File ../../../../../clk_rst_if.sv
+INFO: [XSIM 43-4329] Assuming default value 1 for the first arguement of $fatal at Line 169, File ../../../../../clk_rst_if.sv
+Starting simulation data flow analysis
+WARNING: [XSIM 43-4100] "/home/user100/SV/uvm_axi_gpio_verif/axi_gpio/axi_gpio.sim/sim_1/behav/xsim/glbl.v" Line 6. Module glbl has a timescale but at least one module in design doesn't have timescale.
+WARNING: [XSIM 43-4100] "/home/user100/SV/uvm_axi_gpio_verif/axi_gpio/axi_gpio.sim/sim_1/behav/xsim/glbl.v" Line 6. Module glbl has a timescale but at least one module in design doesn't have timescale.
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling package std.standard
+Compiling package std.textio
+Compiling package ieee.std_logic_1164
+Compiling package ieee.numeric_std
+Compiling package ieee.std_logic_arith
+Compiling package ieee.std_logic_unsigned
+Compiling package synopsys.attributes
+Compiling package ieee.std_logic_misc
+Compiling package axi_lite_ipif_v3_0_4.ipif_pkg
+Compiling package unisim.vcomponents
+Compiling package ieee.vital_timing
+Compiling package ieee.vital_primitives
+Compiling package unisim.vpkg
+Compiling package uvm.uvm_pkg
+Compiling package std.std
+Compiling package xil_defaultlib.$unit_tb_top_sv
+Compiling module xil_defaultlib.cb
+Compiling module xil_defaultlib.cbn
+Compiling module xil_defaultlib.clk_rst_if
+Compiling module xil_defaultlib.cb_driver
+Compiling module xil_defaultlib.cb_monitor
+Compiling module xil_defaultlib.axi_intf
+Compiling module xil_defaultlib.cb_driver
+Compiling module xil_defaultlib.cb_monitor
+Compiling module xil_defaultlib.gpio_intf
+Compiling architecture implementation of entity interrupt_control_v3_1_4.interrupt_control [\interrupt_control(c_num_ce=16,c...]
+Compiling architecture imp of entity axi_lite_ipif_v3_0_4.pselect_f [\pselect_f(c_ab=5,c_aw=9,c_bar="...]
+Compiling architecture imp of entity axi_lite_ipif_v3_0_4.pselect_f [\pselect_f(c_ab=2,c_aw=2,c_bar="...]
+Compiling architecture imp of entity axi_lite_ipif_v3_0_4.pselect_f [\pselect_f(c_ab=2,c_aw=2,c_bar="...]
+Compiling architecture imp of entity axi_lite_ipif_v3_0_4.pselect_f [\pselect_f(c_ab=2,c_aw=2,c_bar="...]
+Compiling architecture imp of entity axi_lite_ipif_v3_0_4.pselect_f [\pselect_f(c_ab=2,c_aw=2,c_bar="...]
+Compiling architecture imp of entity axi_lite_ipif_v3_0_4.pselect_f [\pselect_f(c_ab=1,c_aw=9,c_bar="...]
+Compiling architecture imp of entity axi_lite_ipif_v3_0_4.pselect_f [\pselect_f(c_ab=4,c_aw=4,c_bar="...]
+Compiling architecture imp of entity axi_lite_ipif_v3_0_4.pselect_f [\pselect_f(c_ab=4,c_aw=4,c_bar="...]
+Compiling architecture imp of entity axi_lite_ipif_v3_0_4.pselect_f [\pselect_f(c_ab=4,c_aw=4,c_bar="...]
+Compiling architecture imp of entity axi_lite_ipif_v3_0_4.pselect_f [\pselect_f(c_ab=4,c_aw=4,c_bar="...]
+Compiling architecture imp of entity axi_lite_ipif_v3_0_4.pselect_f [\pselect_f(c_ab=4,c_aw=4,c_bar="...]
+Compiling architecture imp of entity axi_lite_ipif_v3_0_4.pselect_f [\pselect_f(c_ab=4,c_aw=4,c_bar="...]
+Compiling architecture imp of entity axi_lite_ipif_v3_0_4.pselect_f [\pselect_f(c_ab=4,c_aw=4,c_bar="...]
+Compiling architecture imp of entity axi_lite_ipif_v3_0_4.pselect_f [\pselect_f(c_ab=4,c_aw=4,c_bar="...]
+Compiling architecture imp of entity axi_lite_ipif_v3_0_4.pselect_f [\pselect_f(c_ab=4,c_aw=4,c_bar="...]
+Compiling architecture imp of entity axi_lite_ipif_v3_0_4.pselect_f [\pselect_f(c_ab=4,c_aw=4,c_bar="...]
+Compiling architecture imp of entity axi_lite_ipif_v3_0_4.pselect_f [\pselect_f(c_ab=4,c_aw=4,c_bar="...]
+Compiling architecture imp of entity axi_lite_ipif_v3_0_4.pselect_f [\pselect_f(c_ab=4,c_aw=4,c_bar="...]
+Compiling architecture imp of entity axi_lite_ipif_v3_0_4.pselect_f [\pselect_f(c_ab=4,c_aw=4,c_bar="...]
+Compiling architecture imp of entity axi_lite_ipif_v3_0_4.pselect_f [\pselect_f(c_ab=4,c_aw=4,c_bar="...]
+Compiling architecture imp of entity axi_lite_ipif_v3_0_4.pselect_f [\pselect_f(c_ab=4,c_aw=4,c_bar="...]
+Compiling architecture imp of entity axi_lite_ipif_v3_0_4.pselect_f [\pselect_f(c_ab=4,c_aw=4,c_bar="...]
+Compiling architecture imp of entity axi_lite_ipif_v3_0_4.address_decoder [\address_decoder(c_bus_awidth=9,...]
+Compiling architecture imp of entity axi_lite_ipif_v3_0_4.slave_attachment [\slave_attachment(c_ard_addr_ran...]
+Compiling architecture imp of entity axi_lite_ipif_v3_0_4.axi_lite_ipif [\axi_lite_ipif(c_s_axi_addr_widt...]
+Compiling architecture fdre_v of entity unisim.FDRE [fdre_default]
+Compiling architecture fdr_v of entity unisim.FDR [fdr_default]
+Compiling architecture implementation of entity lib_cdc_v1_0_2.cdc_sync [\cdc_sync(c_single_bit=0,c_mtbf_...]
+Compiling architecture imp of entity axi_gpio_v2_0_23.GPIO_Core [\GPIO_Core(c_aw=9,c_interrupt_pr...]
+Compiling architecture imp of entity axi_gpio_v2_0_23.axi_gpio [\axi_gpio(c_family="artix7",c_in...]
+Compiling architecture axi_gpio_0_arch of entity xil_defaultlib.axi_gpio_0 [axi_gpio_0_default]
+Compiling module xil_defaultlib.tb_top
+Compiling module xil_defaultlib.glbl
+Built simulation snapshot tb_top_behav

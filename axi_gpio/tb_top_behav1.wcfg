@@ -1,0 +1,243 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wave_config>
+   <wave_state>
+   </wave_state>
+   <db_ref_list>
+      <db_ref path="tb_top_behav.wdb" id="1">
+         <top_modules>
+            <top_module name="\$unit_tb_top_sv " />
+            <top_module name="glbl" />
+            <top_module name="ipif_pkg" />
+            <top_module name="std" />
+            <top_module name="tb_top" />
+            <top_module name="uvm_pkg" />
+         </top_modules>
+      </db_ref>
+   </db_ref_list>
+   <zoom_setting>
+      <ZoomStartTime time="557738fs"></ZoomStartTime>
+      <ZoomEndTime time="744739fs"></ZoomEndTime>
+      <Cursor1Time time="1200444fs"></Cursor1Time>
+   </zoom_setting>
+   <column_width_setting>
+      <NameColumnWidth column_width="149"></NameColumnWidth>
+      <ValueColumnWidth column_width="71"></ValueColumnWidth>
+   </column_width_setting>
+   <WVObjectSize size="54" />
+   <wvobject type="logic" fp_name="/tb_top/clk">
+      <obj_property name="ElementShortName">clk</obj_property>
+      <obj_property name="ObjectShortName">clk</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/tb_top/reset">
+      <obj_property name="ElementShortName">reset</obj_property>
+      <obj_property name="ObjectShortName">reset</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/tb_top/DUT/s_axi_aclk">
+      <obj_property name="ElementShortName">s_axi_aclk</obj_property>
+      <obj_property name="ObjectShortName">s_axi_aclk</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/tb_top/DUT/s_axi_aresetn">
+      <obj_property name="ElementShortName">s_axi_aresetn</obj_property>
+      <obj_property name="ObjectShortName">s_axi_aresetn</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/tb_top/DUT/s_axi_awaddr">
+      <obj_property name="ElementShortName">s_axi_awaddr[8:0]</obj_property>
+      <obj_property name="ObjectShortName">s_axi_awaddr[8:0]</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/tb_top/DUT/s_axi_awvalid">
+      <obj_property name="ElementShortName">s_axi_awvalid</obj_property>
+      <obj_property name="ObjectShortName">s_axi_awvalid</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/tb_top/DUT/s_axi_awready">
+      <obj_property name="ElementShortName">s_axi_awready</obj_property>
+      <obj_property name="ObjectShortName">s_axi_awready</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/tb_top/DUT/s_axi_wdata">
+      <obj_property name="ElementShortName">s_axi_wdata[31:0]</obj_property>
+      <obj_property name="ObjectShortName">s_axi_wdata[31:0]</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/tb_top/DUT/s_axi_wstrb">
+      <obj_property name="ElementShortName">s_axi_wstrb[3:0]</obj_property>
+      <obj_property name="ObjectShortName">s_axi_wstrb[3:0]</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/tb_top/DUT/s_axi_wvalid">
+      <obj_property name="ElementShortName">s_axi_wvalid</obj_property>
+      <obj_property name="ObjectShortName">s_axi_wvalid</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/tb_top/DUT/s_axi_wready">
+      <obj_property name="ElementShortName">s_axi_wready</obj_property>
+      <obj_property name="ObjectShortName">s_axi_wready</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/tb_top/DUT/s_axi_bresp">
+      <obj_property name="ElementShortName">s_axi_bresp[1:0]</obj_property>
+      <obj_property name="ObjectShortName">s_axi_bresp[1:0]</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/tb_top/DUT/s_axi_bvalid">
+      <obj_property name="ElementShortName">s_axi_bvalid</obj_property>
+      <obj_property name="ObjectShortName">s_axi_bvalid</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/tb_top/DUT/s_axi_bready">
+      <obj_property name="ElementShortName">s_axi_bready</obj_property>
+      <obj_property name="ObjectShortName">s_axi_bready</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/tb_top/DUT/s_axi_araddr">
+      <obj_property name="ElementShortName">s_axi_araddr[8:0]</obj_property>
+      <obj_property name="ObjectShortName">s_axi_araddr[8:0]</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/tb_top/DUT/s_axi_arvalid">
+      <obj_property name="ElementShortName">s_axi_arvalid</obj_property>
+      <obj_property name="ObjectShortName">s_axi_arvalid</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/tb_top/DUT/s_axi_arready">
+      <obj_property name="ElementShortName">s_axi_arready</obj_property>
+      <obj_property name="ObjectShortName">s_axi_arready</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/tb_top/DUT/s_axi_rdata">
+      <obj_property name="ElementShortName">s_axi_rdata[31:0]</obj_property>
+      <obj_property name="ObjectShortName">s_axi_rdata[31:0]</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/tb_top/DUT/s_axi_rresp">
+      <obj_property name="ElementShortName">s_axi_rresp[1:0]</obj_property>
+      <obj_property name="ObjectShortName">s_axi_rresp[1:0]</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/tb_top/DUT/s_axi_rvalid">
+      <obj_property name="ElementShortName">s_axi_rvalid</obj_property>
+      <obj_property name="ObjectShortName">s_axi_rvalid</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/tb_top/DUT/s_axi_rready">
+      <obj_property name="ElementShortName">s_axi_rready</obj_property>
+      <obj_property name="ObjectShortName">s_axi_rready</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/tb_top/DUT/ip2intc_irpt">
+      <obj_property name="ElementShortName">ip2intc_irpt</obj_property>
+      <obj_property name="ObjectShortName">ip2intc_irpt</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/tb_top/DUT/gpio_io_i">
+      <obj_property name="ElementShortName">gpio_io_i[31:0]</obj_property>
+      <obj_property name="ObjectShortName">gpio_io_i[31:0]</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/tb_top/DUT/gpio_io_o">
+      <obj_property name="ElementShortName">gpio_io_o[31:0]</obj_property>
+      <obj_property name="ObjectShortName">gpio_io_o[31:0]</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/tb_top/DUT/gpio_io_t">
+      <obj_property name="ElementShortName">gpio_io_t[31:0]</obj_property>
+      <obj_property name="ObjectShortName">gpio_io_t[31:0]</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/tb_top/DUT/gpio2_io_i">
+      <obj_property name="ElementShortName">gpio2_io_i[31:0]</obj_property>
+      <obj_property name="ObjectShortName">gpio2_io_i[31:0]</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/tb_top/DUT/gpio2_io_o">
+      <obj_property name="ElementShortName">gpio2_io_o[31:0]</obj_property>
+      <obj_property name="ObjectShortName">gpio2_io_o[31:0]</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/tb_top/DUT/gpio2_io_t">
+      <obj_property name="ElementShortName">gpio2_io_t[31:0]</obj_property>
+      <obj_property name="ObjectShortName">gpio2_io_t[31:0]</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/tb_top/gpio_if/clk">
+      <obj_property name="ElementShortName">clk</obj_property>
+      <obj_property name="ObjectShortName">clk</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/tb_top/gpio_if/ip2intc_irpt">
+      <obj_property name="ElementShortName">ip2intc_irpt</obj_property>
+      <obj_property name="ObjectShortName">ip2intc_irpt</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/tb_top/gpio_if/gpio_io_i">
+      <obj_property name="ElementShortName">gpio_io_i[31:0]</obj_property>
+      <obj_property name="ObjectShortName">gpio_io_i[31:0]</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/tb_top/gpio_if/gpio_io_o">
+      <obj_property name="ElementShortName">gpio_io_o[31:0]</obj_property>
+      <obj_property name="ObjectShortName">gpio_io_o[31:0]</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/tb_top/gpio_if/gpio_io_t">
+      <obj_property name="ElementShortName">gpio_io_t[31:0]</obj_property>
+      <obj_property name="ObjectShortName">gpio_io_t[31:0]</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/tb_top/gpio_if/gpio2_io_i">
+      <obj_property name="ElementShortName">gpio2_io_i[31:0]</obj_property>
+      <obj_property name="ObjectShortName">gpio2_io_i[31:0]</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/tb_top/gpio_if/gpio2_io_o">
+      <obj_property name="ElementShortName">gpio2_io_o[31:0]</obj_property>
+      <obj_property name="ObjectShortName">gpio2_io_o[31:0]</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/tb_top/gpio_if/gpio2_io_t">
+      <obj_property name="ElementShortName">gpio2_io_t[31:0]</obj_property>
+      <obj_property name="ObjectShortName">gpio2_io_t[31:0]</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/tb_top/axi_if/clk">
+      <obj_property name="ElementShortName">clk</obj_property>
+      <obj_property name="ObjectShortName">clk</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/tb_top/axi_if/s_axi_awaddr">
+      <obj_property name="ElementShortName">s_axi_awaddr[8:0]</obj_property>
+      <obj_property name="ObjectShortName">s_axi_awaddr[8:0]</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/tb_top/axi_if/s_axi_awvalid">
+      <obj_property name="ElementShortName">s_axi_awvalid</obj_property>
+      <obj_property name="ObjectShortName">s_axi_awvalid</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/tb_top/axi_if/s_axi_awready">
+      <obj_property name="ElementShortName">s_axi_awready</obj_property>
+      <obj_property name="ObjectShortName">s_axi_awready</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/tb_top/axi_if/s_axi_wdata">
+      <obj_property name="ElementShortName">s_axi_wdata[31:0]</obj_property>
+      <obj_property name="ObjectShortName">s_axi_wdata[31:0]</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/tb_top/axi_if/s_axi_wstrb">
+      <obj_property name="ElementShortName">s_axi_wstrb[3:0]</obj_property>
+      <obj_property name="ObjectShortName">s_axi_wstrb[3:0]</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/tb_top/axi_if/s_axi_wvalid">
+      <obj_property name="ElementShortName">s_axi_wvalid</obj_property>
+      <obj_property name="ObjectShortName">s_axi_wvalid</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/tb_top/axi_if/s_axi_wready">
+      <obj_property name="ElementShortName">s_axi_wready</obj_property>
+      <obj_property name="ObjectShortName">s_axi_wready</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/tb_top/axi_if/s_axi_bresp">
+      <obj_property name="ElementShortName">s_axi_bresp[1:0]</obj_property>
+      <obj_property name="ObjectShortName">s_axi_bresp[1:0]</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/tb_top/axi_if/s_axi_bvalid">
+      <obj_property name="ElementShortName">s_axi_bvalid</obj_property>
+      <obj_property name="ObjectShortName">s_axi_bvalid</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/tb_top/axi_if/s_axi_bready">
+      <obj_property name="ElementShortName">s_axi_bready</obj_property>
+      <obj_property name="ObjectShortName">s_axi_bready</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/tb_top/axi_if/s_axi_araddr">
+      <obj_property name="ElementShortName">s_axi_araddr[8:0]</obj_property>
+      <obj_property name="ObjectShortName">s_axi_araddr[8:0]</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/tb_top/axi_if/s_axi_arvalid">
+      <obj_property name="ElementShortName">s_axi_arvalid</obj_property>
+      <obj_property name="ObjectShortName">s_axi_arvalid</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/tb_top/axi_if/s_axi_arready">
+      <obj_property name="ElementShortName">s_axi_arready</obj_property>
+      <obj_property name="ObjectShortName">s_axi_arready</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/tb_top/axi_if/s_axi_rdata">
+      <obj_property name="ElementShortName">s_axi_rdata[31:0]</obj_property>
+      <obj_property name="ObjectShortName">s_axi_rdata[31:0]</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/tb_top/axi_if/s_axi_rresp">
+      <obj_property name="ElementShortName">s_axi_rresp[1:0]</obj_property>
+      <obj_property name="ObjectShortName">s_axi_rresp[1:0]</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/tb_top/axi_if/s_axi_rvalid">
+      <obj_property name="ElementShortName">s_axi_rvalid</obj_property>
+      <obj_property name="ObjectShortName">s_axi_rvalid</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/tb_top/axi_if/s_axi_rready">
+      <obj_property name="ElementShortName">s_axi_rready</obj_property>
+      <obj_property name="ObjectShortName">s_axi_rready</obj_property>
+   </wvobject>
+</wave_config>
