@@ -18,7 +18,7 @@ class wr_driver extends uvm_driver #(axi_seq_item);
     endfunction
     
     task run_phase(uvm_phase phase);
-        // wait(tb_top.reset == 1'b1);
+        wait(tb_top.reset == 1'b1);
         forever begin
             `uvm_info(get_full_name(), "AXI Write Driver Started", UVM_NONE)
             seq_item_port.get_next_item(axi_inst);  // Get the next item from sequencer

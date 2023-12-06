@@ -18,6 +18,7 @@ class rd_driver extends uvm_driver #(axi_seq_item) ;
   endfunction: build_phase
 
   task run_phase(uvm_phase phase);
+    wait(tb_top.reset == 1'b1);
     forever begin
       `uvm_info(get_full_name(), "AXI Read Driver Started", UVM_NONE)
       seq_item_port.get_next_item(axi_pkt); 

@@ -9,14 +9,14 @@ class axi_seq_item extends uvm_sequence_item;
 // ---------------
 // -- axi write address channel signals
 //---------------
-logic [C_S_AXI_ADDR_WIDTH-1: 0] s_axi_awaddr   ;
+rand logic [C_S_AXI_ADDR_WIDTH-1: 0] s_axi_awaddr   ;
 logic s_axi_awvalid  ;
 logic s_axi_awready  ;
 // ---------------
 // -- axi write data channel signals
 //---------------
-logic [C_S_AXI_DATA_WIDTH-1 : 0] s_axi_wdata    ; // randomizw it if want to
-logic [(C_S_AXI_DATA_WIDTH/8)-1 : 0] s_axi_wstrb    ;
+rand logic [C_S_AXI_DATA_WIDTH-1 : 0] s_axi_wdata    ; // randomizw it if want to
+rand logic [(C_S_AXI_DATA_WIDTH/8)-1 : 0] s_axi_wstrb    ;
 logic s_axi_wvalid   ;
 logic s_axi_wready   ;
 // ---------------
@@ -28,7 +28,7 @@ logic s_axi_bready   ;
 // ---------------
 // -- axi read address channel signals
 // ---------------
-logic [C_S_AXI_ADDR_WIDTH-1: 0] s_axi_araddr   ;
+rand logic [C_S_AXI_ADDR_WIDTH-1: 0] s_axi_araddr   ;
 logic s_axi_arvalid  ;
 logic s_axi_arready  ;
 // ---------------

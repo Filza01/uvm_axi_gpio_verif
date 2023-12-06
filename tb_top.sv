@@ -34,7 +34,9 @@ parameter C_GPIO2_WIDTH = 32;
 `include "gpio_env/gpio_agent.sv"
 `include "gpio_env/gpio_env.sv"
 
-`include "base_test.sv"
+`include "scoreboard.sv"
+
+`include "test_lib.sv"
 
 
 module tb_top();
@@ -67,7 +69,7 @@ module tb_top();
         uvm_config_db#(virtual axi_intf )::set(null,"*","axi_if",axi_if); 
         uvm_config_db#(virtual gpio_intf )::set(null,"*","gpio_if",gpio_if); 
         $display("\t\tAll interfaces have been set");
-        run_test("base_test");
+        run_test("GPIO_channel_1_2_output");
     end
 
     // DUT instantiation
