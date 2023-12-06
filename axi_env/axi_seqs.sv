@@ -122,13 +122,13 @@ class axi_write_data_2 extends axi_base_seq;
     endtask : body
 endclass
 
-class axi_write_global_intr extends axi_base_seq;
-    `uvm_object_utils(axi_write_global_intr)
+class axi_write_GIER extends axi_base_seq;
+    `uvm_object_utils(axi_write_GIER)
 
     axi_write_seq wr_seq;
 
-    function new(string name = "axi_write_global_intr");
-        super.new(name)
+    function new(string name = "axi_write_GIER");
+        super.new(name);
     endfunction //new()
 
     virtual task body();
@@ -138,7 +138,101 @@ class axi_write_global_intr extends axi_base_seq;
     endtask
 endclass 
 
+class axi_write_IPIER_1 extends axi_base_seq;
+    `uvm_object_utils(axi_write_IPIER_1)
 
+    axi_write_seq wr_seq;
+
+    function new(string name = "axi_write_IPIER_1");
+        super.new(name);
+    endfunction //new()
+
+    virtual task body();
+        `uvm_info(get_type_name(), "Executing AXI write channel 1 IPIER sequence", UVM_LOW)
+        `uvm_do_with(wr_seq, {wr_seq.addr == 9'h128; wr_seq.data == 32'h1; wr_seq.strb == 4'hf;})
+        `uvm_info(get_type_name(), "AXI write channel 1 IPIER sequence ended", UVM_LOW)
+    endtask
+endclass 
+
+class axi_write_IPIER_2 extends axi_base_seq;
+    `uvm_object_utils(axi_write_IPIER_2)
+
+    axi_write_seq wr_seq;
+
+    function new(string name = "axi_write_IPIER_2");
+        super.new(name);
+    endfunction //new()
+
+    virtual task body();
+        `uvm_info(get_type_name(), "Executing AXI write channel 2 IPIER sequence", UVM_LOW)
+        `uvm_do_with(wr_seq, {wr_seq.addr == 9'h128; wr_seq.data == 32'h2; wr_seq.strb == 4'hf;})
+        `uvm_info(get_type_name(), "AXI write channel 2 IPIER sequence ended", UVM_LOW)
+    endtask
+endclass 
+
+class axi_write_IPIER_1_2 extends axi_base_seq;
+    `uvm_object_utils(axi_write_IPIER_1_2)
+
+    axi_write_seq wr_seq;
+
+    function new(string name = "axi_write_IPIER_1_2");
+        super.new(name);
+    endfunction //new()
+
+    virtual task body();
+        `uvm_info(get_type_name(), "Executing AXI write channel 1 & 2 IPIER sequence", UVM_LOW)
+        `uvm_do_with(wr_seq, {wr_seq.addr == 9'h128; wr_seq.data == 32'h3; wr_seq.strb == 4'hf;})
+        `uvm_info(get_type_name(), "AXI write channel 1 & 2 IPIER sequence ended", UVM_LOW)
+    endtask
+endclass 
+
+class axi_write_IPISR_1 extends axi_base_seq;
+    `uvm_object_utils(axi_write_IPISR_1)
+
+    axi_write_seq wr_seq;
+
+    function new(string name = "axi_write_IPISR_1");
+        super.new(name);
+    endfunction //new()
+
+    virtual task body();
+        `uvm_info(get_type_name(), "Executing AXI write channel 1 IPISR sequence", UVM_LOW)
+        `uvm_do_with(wr_seq, {wr_seq.addr == 9'h120; wr_seq.data == 32'h1; wr_seq.strb == 4'hf;})
+        `uvm_info(get_type_name(), "AXI write channel 1 IPISR sequence ended", UVM_LOW)
+    endtask
+endclass 
+
+class axi_write_IPISR_2 extends axi_base_seq;
+    `uvm_object_utils(axi_write_IPISR_2)
+
+    axi_write_seq wr_seq;
+
+    function new(string name = "axi_write_IPISR_2");
+        super.new(name);
+    endfunction //new()
+
+    virtual task body();
+        `uvm_info(get_type_name(), "Executing AXI write channel 2 IPISR sequence", UVM_LOW)
+        `uvm_do_with(wr_seq, {wr_seq.addr == 9'h120; wr_seq.data == 32'h2; wr_seq.strb == 4'hf;})
+        `uvm_info(get_type_name(), "AXI write channel 2 IPISR sequence ended", UVM_LOW)
+    endtask
+endclass 
+
+class axi_write_IPISR_1_2 extends axi_base_seq;
+    `uvm_object_utils(axi_write_IPISR_1_2)
+
+    axi_write_seq wr_seq;
+
+    function new(string name = "axi_write_IPISR_1_2");
+        super.new(name);
+    endfunction //new()
+
+    virtual task body();
+        `uvm_info(get_type_name(), "Executing AXI write channel 1 & 2 IPISR sequence", UVM_LOW)
+        `uvm_do_with(wr_seq, {wr_seq.addr == 9'h120; wr_seq.data == 32'h3; wr_seq.strb == 4'hf;})
+        `uvm_info(get_type_name(), "AXI write channel 1 & 2 IPISR sequence ended", UVM_LOW)
+    endtask
+endclass 
 
 // --------------------------------
 // ------ Read Sequences ----------
@@ -220,18 +314,50 @@ class axi_read_tir_2 extends axi_base_seq;
     endtask : body
 endclass
 
-class axi_read_global_intr extends axi_base_seq;
-    `uvm_object_utils(axi_read_global_intr)
+class axi_read_GIER extends axi_base_seq;
+    `uvm_object_utils(axi_read_GIER)
 
     axi_read_seq rd_seq;
 
-    function new(string name = "axi_read_global_intr");
-        super.new(name)
+    function new(string name = "axi_read_GIER");
+        super.new(name);
     endfunction //new()
 
     virtual task body();
         `uvm_info(get_type_name(), "Executing AXI read GLOBAL INTERRUPT sequence", UVM_LOW)
         `uvm_do_with(rd_seq, {rd_seq.addr == 9'h11c;})
         `uvm_info(get_type_name(), "AXI read GLOBAL INTERRUPT sequence ended", UVM_LOW)
+    endtask
+endclass 
+
+class axi_read_IPIER extends axi_base_seq;
+    `uvm_object_utils(axi_read_IPIER)
+
+    axi_read_seq rd_seq;
+
+    function new(string name = "axi_read_IPIER");
+        super.new(name);
+    endfunction //new()
+
+    virtual task body();
+        `uvm_info(get_type_name(), "Executing AXI read IPIER sequence", UVM_LOW)
+        `uvm_do_with(rd_seq, {rd_seq.addr == 9'h128;})
+        `uvm_info(get_type_name(), "AXI read IPIER sequence ended", UVM_LOW)
+    endtask
+endclass 
+
+class axi_read_IPISR extends axi_base_seq;
+    `uvm_object_utils(axi_read_IPISR)
+
+    axi_read_seq rd_seq;
+
+    function new(string name = "axi_read_IPISR");
+        super.new(name);
+    endfunction //new()
+
+    virtual task body();
+        `uvm_info(get_type_name(), "Executing AXI read IPISR sequence", UVM_LOW)
+        `uvm_do_with(rd_seq, {rd_seq.addr == 9'h120;})
+        `uvm_info(get_type_name(), "AXI read IPISR sequence ended", UVM_LOW)
     endtask
 endclass 

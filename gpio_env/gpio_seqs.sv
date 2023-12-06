@@ -23,34 +23,4 @@ class gpio_seq extends gpio_base_seq;
     endtask : body
 endclass
 
-class gpio_seq_channel_1_in extends gpio_base_seq;
-    `uvm_object_utils(gpio_seq_channel_1_in)
-    gpio_seq seq_gpio;
-
-    function new (string name = "gpio_seq_channel_in");
-        super.new(name);
-    endfunction
-
-    virtual task body();
-        `uvm_info(get_type_name(), "Executing GPIO channel 1 input sequence", UVM_LOW)
-        `uvm_do_with (seq_gpio, {seq_gpio.in1 == 32'h22222222;})
-        `uvm_info(get_type_name(), "GPIO channel 1 input sequence ended", UVM_LOW)
-    endtask
-endclass
-
-class gpio_seq_channel_2_in extends gpio_base_seq;
-    `uvm_object_utils(gpio_seq_channel_2_in)
-    gpio_seq seq_gpio;
-
-    function new (string name = "gpio_seq_channel_2_in");
-        super.new(name);
-    endfunction
-
-    virtual task body();
-        `uvm_info(get_type_name(), "Executing GPIO channel 2 input sequence", UVM_LOW)
-        `uvm_do_with (seq_gpio, {seq_gpio.in2 == 32'h22222222;})
-        `uvm_info(get_type_name(), "GPIO channel 2 input sequence ended", UVM_LOW)
-    endtask
-endclass
-
     

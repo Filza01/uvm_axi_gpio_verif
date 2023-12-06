@@ -69,7 +69,7 @@ module tb_top();
         uvm_config_db#(virtual axi_intf )::set(null,"*","axi_if",axi_if); 
         uvm_config_db#(virtual gpio_intf )::set(null,"*","gpio_if",gpio_if); 
         $display("\t\tAll interfaces have been set");
-        run_test("GPIO_channel_1_2_output");
+        run_test("GPIO_ch_1_2_intr_en_with_input_at_ch_any");
     end
 
     // DUT instantiation

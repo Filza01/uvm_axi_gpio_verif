@@ -74,6 +74,39 @@ class scoreboard extends uvm_scoreboard;
             end
         end
 
+        if (axi_pkt.s_axi_awaddr == 9'h11c) begin
+            if (axi_pkt.s_axi_wdata == 32'h80000000) begin
+                `uvm_info(get_full_name(), "\n\n\t\t ----- GPIO GLOBAL INTERRUPT SET CORRECTLY. TEST PASS ----- \n", UVM_NONE)
+                matched_pkts++;
+            end
+            else begin
+                `uvm_error(get_full_name(), "GPIO global interrupt not assigned correctly")
+                mismatched_pkts++;
+            end
+        end
+
+        if (axi_pkt.s_axi_awaddr == 9'h128) begin
+            if (axi_pkt.s_axi_wdata == 32'h1 || axi_pkt.s_axi_wdata == 32'h2 || axi_pkt.s_axi_wdata == 32'h3) begin
+                `uvm_info(get_full_name(), "\n\n\t\t ----- GPIO INTERRUPT ENABLE SET CORRECTLY. TEST PASS ----- \n", UVM_NONE)
+                matched_pkts++;
+            end
+            else begin
+                `uvm_error(get_full_name(), "GPIO interrupt enable not set correctly")
+                mismatched_pkts++;
+            end
+        end
+
+        if (axi_pkt.s_axi_awaddr == 9'h120) begin
+            if (axi_pkt.s_axi_wdata == 32'h1 || axi_pkt.s_axi_wdata == 32'h2 || axi_pkt.s_axi_wdata == 32'h3) begin
+                `uvm_info(get_full_name(), "\n\n\t\t ----- GPIO INTERRUPT STATUS SET CORRECTLY. TEST PASS ----- \n", UVM_NONE)
+                matched_pkts++;
+            end
+            else begin
+                `uvm_error(get_full_name(), "GPIO interrupt status not set correctly")
+                mismatched_pkts++;
+            end
+        end
+        
         axi_wr_pkts++;
     endfunction
 
