@@ -62,14 +62,11 @@ module tb_top();
     // end
 
     initial begin
-        $display("\t\tStarting the initial begin");
         clk_if.set_active();
-        $display("\t\tClock is activated");
         uvm_config_db#(virtual clk_rst_if  )::set(null,"*","clk_if",clk_if);
         uvm_config_db#(virtual axi_intf )::set(null,"*","axi_if",axi_if); 
         uvm_config_db#(virtual gpio_intf )::set(null,"*","gpio_if",gpio_if); 
-        $display("\t\tAll interfaces have been set");
-        run_test("GPIO_ch_1_2_intr_en_with_input_at_ch_any");
+        run_test("GPIO_ch_1_all_input");
     end
 
     // DUT instantiation

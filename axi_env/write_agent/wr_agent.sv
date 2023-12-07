@@ -7,7 +7,7 @@ class wr_agent extends uvm_agent;
 
     function new(string name = "wr_agent", uvm_component parent = null);
         super.new(name, parent);
-    endfunction //new()
+    endfunction 
 
     virtual function void build_phase(uvm_phase phase);
         super.build_phase(phase);
@@ -18,7 +18,6 @@ class wr_agent extends uvm_agent;
 
     virtual function void connect_phase(uvm_phase phase);
         drv.seq_item_port.connect(seqr.seq_item_export);
-        // mon.axi_port_item.connect();
     endfunction
     
 endclass 

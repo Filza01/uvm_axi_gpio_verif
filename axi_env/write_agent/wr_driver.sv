@@ -20,12 +20,11 @@ class wr_driver extends uvm_driver #(axi_seq_item);
     task run_phase(uvm_phase phase);
         wait(tb_top.reset == 1'b1);
         forever begin
-            `uvm_info(get_full_name(), "AXI Write Driver Started", UVM_NONE)
-            seq_item_port.get_next_item(axi_inst);  // Get the next item from sequencer
+            // `uvm_info(get_full_name(), "AXI Write Driver Started", UVM_NONE)
+            seq_item_port.get_next_item(axi_inst);  
             drive();
             seq_item_port.item_done();
-            // `uvm_info(get_full_name,$sformatf("In AXI Write driver, \n\t\t s_axi_awvalid = %h, \n\t\t s_axi_awaddr = %h, \n\t\t s_axi_wvalid = %h, \n\t\t s_axi_wdata = %h, \n\t\t s_axi_wstrb = %h, \n\t\t s_axi_bready = %h", axi_inst.s_axi_awvalid, axi_inst.s_axi_awaddr, axi_inst.s_axi_wvalid, axi_inst.s_axi_wdata, axi_inst.s_axi_bready), UVM_NONE)
-            `uvm_info(get_full_name(), "AXI Write Driver done", UVM_NONE)
+            // `uvm_info(get_full_name(), "AXI Write Driver done", UVM_NONE)
         end
     endtask
 

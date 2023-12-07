@@ -6,7 +6,6 @@ class rd_driver extends uvm_driver #(axi_seq_item) ;
   axi_seq_item axi_pkt;
   virtual axi_intf axi_if;
 
-  // Constructor - required syntax for UVM automation and utilities
   function new (string name, uvm_component parent);
     super.new(name, parent);
   endfunction : new
@@ -20,11 +19,11 @@ class rd_driver extends uvm_driver #(axi_seq_item) ;
   task run_phase(uvm_phase phase);
     wait(tb_top.reset == 1'b1);
     forever begin
-      `uvm_info(get_full_name(), "AXI Read Driver Started", UVM_NONE)
+      // `uvm_info(get_full_name(), "AXI Read Driver Started", UVM_NONE)
       seq_item_port.get_next_item(axi_pkt); 
       drive();
       seq_item_port.item_done();
-      `uvm_info(get_full_name(), "AXI Read Driver done", UVM_NONE)
+      // `uvm_info(get_full_name(), "AXI Read Driver done", UVM_NONE)
     end
   endtask
 
@@ -48,9 +47,9 @@ class rd_driver extends uvm_driver #(axi_seq_item) ;
       end
     join
     @(posedge axi_if.clk);
-  endtask //
+  endtask
 
 
 
 
-endclass //rd_driver extends uvm_driver 
+endclass 

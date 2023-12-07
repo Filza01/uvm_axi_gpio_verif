@@ -6,8 +6,7 @@ class base_test extends uvm_test;
     virtual axi_intf axi_if;
 
     virtual gpio_intf gpio_if;
-     
-    //environment instance for test
+    
     axi_env  env_axi;
     gpio_env env_gpio;
 

@@ -502,3 +502,30 @@
   CREATE_STREAM @1440000 {NAME:axi_rd_2 T:Transactions SCOPE:uvm_test_top.env_axi.read_agent.sequencer STREAM:1506}
   CREATE_STREAM @1780000 {NAME:axi_wr_6 T:Transactions SCOPE:uvm_test_top.env_axi.write_agent.seqr STREAM:1568}
   CREATE_STREAM @2440000 {NAME:axi_wr_7 T:Transactions SCOPE:uvm_test_top.env_axi.write_agent.seqr STREAM:1728}
+  CREATE_STREAM @220000 {NAME:axi_wr_1 T:Transactions SCOPE:uvm_test_top.env_axi.write_agent.seqr STREAM:1122}
+  CREATE_STREAM @400000 {NAME:gpio_i T:Transactions SCOPE:uvm_test_top.env_gpio.agent.seqr STREAM:1154}
+  CREATE_STREAM @460000 {NAME:axi_rd_1 T:Transactions SCOPE:uvm_test_top.env_axi.read_agent.sequencer STREAM:1168}
+  CREATE_STREAM @220000 {NAME:axi_wr_1 T:Transactions SCOPE:uvm_test_top.env_axi.write_agent.seqr STREAM:1146}
+  CREATE_STREAM @400000 {NAME:axi_wr_2 T:Transactions SCOPE:uvm_test_top.env_axi.write_agent.seqr STREAM:1178}
+  CREATE_STREAM @560000 {NAME:axi_wr_3 T:Transactions SCOPE:uvm_test_top.env_axi.write_agent.seqr STREAM:1208}
+  CREATE_STREAM @720000 {NAME:axi_wr_4 T:Transactions SCOPE:uvm_test_top.env_axi.write_agent.seqr STREAM:1238}
+  CREATE_STREAM @880000 {NAME:gpio_i T:Transactions SCOPE:uvm_test_top.env_gpio.agent.seqr STREAM:1268}
+  CREATE_STREAM @940000 {NAME:axi_rd_1 T:Transactions SCOPE:uvm_test_top.env_axi.read_agent.sequencer STREAM:1282}
+  CREATE_STREAM @1100000 {NAME:axi_rd_2 T:Transactions SCOPE:uvm_test_top.env_axi.read_agent.sequencer STREAM:1310}
+  CREATE_STREAM @220000 {NAME:axi_wr_1 T:Transactions SCOPE:uvm_test_top.env_axi.write_agent.seqr STREAM:1146}
+  CREATE_STREAM @400000 {NAME:axi_wr_2 T:Transactions SCOPE:uvm_test_top.env_axi.write_agent.seqr STREAM:1182}
+  CREATE_STREAM @560000 {NAME:axi_wr_3 T:Transactions SCOPE:uvm_test_top.env_axi.write_agent.seqr STREAM:1216}
+  CREATE_STREAM @720000 {NAME:axi_wr_4 T:Transactions SCOPE:uvm_test_top.env_axi.write_agent.seqr STREAM:1250}
+  CREATE_STREAM @880000 {NAME:gpio_i T:Transactions SCOPE:uvm_test_top.env_gpio.agent.seqr STREAM:1284}
+  CREATE_STREAM @940000 {NAME:axi_rd_1 T:Transactions SCOPE:uvm_test_top.env_axi.read_agent.sequencer STREAM:1300}
+  CREATE_STREAM @1100000 {NAME:axi_rd_2 T:Transactions SCOPE:uvm_test_top.env_axi.read_agent.sequencer STREAM:1330}
+  CREATE_STREAM @220000 {NAME:axi_wr_1 T:Transactions SCOPE:uvm_test_top.env_axi.write_agent.seqr STREAM:1164}
+  CREATE_STREAM @400000 {NAME:axi_wr_3 T:Transactions SCOPE:uvm_test_top.env_axi.write_agent.seqr STREAM:1200}
+  CREATE_STREAM @560000 {NAME:axi_wr_2 T:Transactions SCOPE:uvm_test_top.env_axi.write_agent.seqr STREAM:1234}
+  CREATE_STREAM @720000 {NAME:axi_wr_4 T:Transactions SCOPE:uvm_test_top.env_axi.write_agent.seqr STREAM:1262}
+  CREATE_STREAM @880000 {NAME:gpio_i T:Transactions SCOPE:uvm_test_top.env_gpio.agent.seqr STREAM:1290}
+  CREATE_STREAM @1120000 {NAME:axi_wr_5 T:Transactions SCOPE:uvm_test_top.env_axi.write_agent.seqr STREAM:1320}
+  CREATE_STREAM @1280000 {NAME:axi_rd_1 T:Transactions SCOPE:uvm_test_top.env_axi.read_agent.sequencer STREAM:1362}
+  CREATE_STREAM @1440000 {NAME:axi_rd_2 T:Transactions SCOPE:uvm_test_top.env_axi.read_agent.sequencer STREAM:1392}
+  CREATE_STREAM @1780000 {NAME:axi_wr_6 T:Transactions SCOPE:uvm_test_top.env_axi.write_agent.seqr STREAM:1434}
+  CREATE_STREAM @2440000 {NAME:axi_wr_7 T:Transactions SCOPE:uvm_test_top.env_axi.write_agent.seqr STREAM:1542}

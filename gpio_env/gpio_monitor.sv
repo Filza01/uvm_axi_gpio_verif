@@ -29,7 +29,7 @@ class gpio_monitor extends uvm_monitor;
         forever begin
             gpio_if.clk_pos(1);
             if (compare()) begin
-            `uvm_info(get_full_name,"GPIO monitor class started", UVM_NONE)
+            // `uvm_info(get_full_name,"GPIO monitor class started", UVM_NONE)
             gpio_inst = gpio_seq_item::type_id::create("gpio_inst",this);
             
             gpio_inst.gpio_io_t = `MON_IF.gpio_io_t;
@@ -41,9 +41,9 @@ class gpio_monitor extends uvm_monitor;
             gpio_inst.ip2intc_irpt = `MON_IF.ip2intc_irpt;
             gpio_port.write(gpio_inst);
             update_prev_values();
-            `uvm_info(get_full_name,"Data written to port item", UVM_NONE)
+            // `uvm_info(get_full_name,"Data written to port item", UVM_NONE)
             `uvm_info(get_full_name,$sformatf("In GPIO monitor, \n\t\t gpio_io_t = %b \n\t\t gpio_io_i = %b \n\t\t gpio_io_o = %b, \n\t\t gpio2_io_t = %b \n\t\t gpio2_io_i = %b \n\t\t gpio2_io_o = %b \n\t\t ip2intc_irpt = %b", gpio_inst.gpio_io_t, gpio_inst.gpio_io_i, gpio_inst.gpio_io_o, gpio_inst.gpio2_io_t, gpio_inst.gpio2_io_i, gpio_inst.gpio2_io_o, gpio_inst.ip2intc_irpt), UVM_NONE)
-            `uvm_info(get_full_name,"GPIO monitor class ended", UVM_NONE)
+            // `uvm_info(get_full_name,"GPIO monitor class ended", UVM_NONE)
             end
         end
     endtask
