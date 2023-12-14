@@ -1,0 +1,34 @@
+
+ Options Set are : 
+
+   Command Line               : xcrg -db_name test7 -report_dir rep7 -report_format html
+   Input DB[s]               : test7
+   Report Directory           : rep7
+   Report Format              : html
+   Log File                   : xcrg.log
+
+
+                  Functional Coverage Report 
+
+  1	./xsim.covdb/test7/xsim.covinfo
+
+
+ Creating Output Directory            : xsim.covdb/xcrg_mdb
+
+ Saving the Coverage Info at          : xsim.covdb/xcrg_mdb/xsim.covinfo
+
+ XILINX VIVADO is set as              : /opt/Xilinx/Vivado/2022.1
+
+ Setting the report dir name as       : rep7
+
+ INFO : Destination directory rep7/.css is being overwritten
+ INFO : Destination directory rep7/.js is being overwritten
+ INFO : Destination directory rep7/.reportStyles is being overwritten
+ Creating dashboard.html 
+
+ Creating groups.html 
+
+ Creating grp0.html 
+
+ Creating grp1.html 
+

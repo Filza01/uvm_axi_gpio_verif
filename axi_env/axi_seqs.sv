@@ -117,7 +117,7 @@ class axi_write_data_2 extends axi_base_seq;
 
      virtual task body();
         `uvm_info(get_type_name(), "Executing AXI write DATA 2 sequence", UVM_LOW)
-        `uvm_do_with(wr_seq, {wr_seq.addr == 8; wr_seq.data == 32'h43434343; wr_seq.strb == 4'hf;})
+        `uvm_do_with(wr_seq, {wr_seq.addr == 8; wr_seq.data == 32'h34343434; wr_seq.strb == 4'hf;})
         `uvm_info(get_type_name(), "AXI write DATA 2 sequence ended", UVM_LOW)
     endtask : body
 endclass

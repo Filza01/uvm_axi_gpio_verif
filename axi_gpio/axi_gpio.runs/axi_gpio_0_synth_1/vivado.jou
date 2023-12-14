@@ -1,12 +1,13 @@
 #-----------------------------------------------------------
-# Vivado v2020.1 (64-bit)
-# SW Build 2902540 on Wed May 27 19:54:35 MDT 2020
-# IP Build 2902112 on Wed May 27 22:43:36 MDT 2020
-# Start of session at: Wed Nov 29 13:49:48 2023
-# Process ID: 128355
+# Vivado v2022.1 (64-bit)
+# SW Build 3526262 on Mon Apr 18 15:47:01 MDT 2022
+# IP Build 3524634 on Mon Apr 18 20:55:01 MDT 2022
+# Start of session at: Wed Dec 13 17:20:25 2023
+# Process ID: 33165
 # Current directory: /home/user100/SV/uvm_axi_gpio_verif/axi_gpio/axi_gpio.runs/axi_gpio_0_synth_1
 # Command line: vivado -log axi_gpio_0.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source axi_gpio_0.tcl
 # Log file: /home/user100/SV/uvm_axi_gpio_verif/axi_gpio/axi_gpio.runs/axi_gpio_0_synth_1/axi_gpio_0.vds
 # Journal file: /home/user100/SV/uvm_axi_gpio_verif/axi_gpio/axi_gpio.runs/axi_gpio_0_synth_1/vivado.jou
+# Running On: user100, OS: Linux, CPU Frequency: 2391.709 MHz, CPU Physical cores: 2, Host memory: 12312 MB
 #-----------------------------------------------------------
 source axi_gpio_0.tcl -notrace

@@ -36,6 +36,8 @@ parameter C_GPIO2_WIDTH = 32;
 
 `include "scoreboard.sv"
 
+`include "coverage.sv"
+
 `include "test_lib.sv"
 
 
@@ -66,7 +68,7 @@ module tb_top();
         uvm_config_db#(virtual clk_rst_if  )::set(null,"*","clk_if",clk_if);
         uvm_config_db#(virtual axi_intf )::set(null,"*","axi_if",axi_if); 
         uvm_config_db#(virtual gpio_intf )::set(null,"*","gpio_if",gpio_if); 
-        run_test("GPIO_ch_1_all_input");
+        run_test("GPIO_ch_2_all_input");
     end
 
     // DUT instantiation

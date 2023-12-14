@@ -13,6 +13,10 @@ class base_test extends uvm_test;
     uvm_objection obj;
 
     scoreboard scb;
+
+    write_coverage wr_cov;
+
+    read_coverage rd_cov;
     
     function new(string name = "base_test", uvm_component parent = null);
         super.new(name,parent);
@@ -34,12 +38,17 @@ class base_test extends uvm_test;
         env_gpio = gpio_env::type_id::create("env_gpio",this);
         obj = uvm_objection::type_id::create("obj", this);
         scb = scoreboard::type_id::create("scb",this);
+        wr_cov = write_coverage::type_id::create("wr_cov",this);
+        rd_cov = read_coverage::type_id::create("rd_cov",this);
     endfunction: build_phase
 
     function void connect_phase(uvm_phase phase);
         env_axi.write_agent.mon.write_port.connect(scb.axi_wr);
         env_axi.read_agent.monitor.read_port.connect(scb.axi_rd);
         env_gpio.agent.mon.gpio_port.connect(scb.gpio);
+        env_axi.write_agent.mon.write_port.connect(wr_cov.analysis_export);
+        env_axi.read_agent.monitor.read_port.connect(rd_cov.analysis_export);
+
     endfunction: connect_phase
     
     task reset_phase(uvm_phase phase);
@@ -161,7 +170,7 @@ class GPIO_ch_2_all_input extends base_test;
         // setting direction of channel 2 pins as input
         axi_wr_1.start(env_axi.write_agent.seqr);
         // executing gpio sequence
-        gpio_i.in2 = 32'h22222222;
+        gpio_i.in2 = 32'h44444444;
         gpio_i.in1 = 32'h00000000;
         gpio_i.start(env_gpio.agent.seqr);
         axi_if.clk_pos(2);
@@ -237,7 +246,7 @@ class GPIO_ch_1_2_input extends base_test;
         axi_wr_2.start(env_axi.write_agent.seqr);
         // executing gpio sequence
         gpio_i.in1 = 32'h22222222;
-        gpio_i.in2 = 32'h55555555;
+        gpio_i.in2 = 32'h44444444;
         gpio_i.start(env_gpio.agent.seqr);
         axi_if.clk_pos(2);
         // reading from channel 1 pins
@@ -386,7 +395,7 @@ class GPIO_ch_1_output_2_input extends base_test;
         axi_wr_4.start(env_axi.write_agent.seqr);
         // executing gpio sequence
         gpio_i.in1 = 32'h22222222;
-        gpio_i.in2 = 32'h22222222;
+        gpio_i.in2 = 32'h44444444;
         gpio_i.start(env_gpio.agent.seqr);
         axi_if.clk_pos(2);
         // reading from channel 1
@@ -488,7 +497,7 @@ class GPIO_ch_1_2_intr_en_with_input_at_ch_any extends base_test;
     task interrupt_at_channel_2();
         // transition at channel 2
         gpio_i.in1 = 32'h22222222;
-        gpio_i.in2 = 32'h23283482;
+        gpio_i.in2 = 32'h44444444;
         gpio_i.start(env_gpio.agent.seqr);
         axi_if.clk_pos(2);
         // waiting for interrupt
@@ -515,8 +524,8 @@ class GPIO_ch_1_2_intr_en_with_input_at_ch_any extends base_test;
 
     task interrupt_at_both_channels();
         // transition at both channels
-        gpio_i.in1 = 32'h83752373;
-        gpio_i.in2 = 32'h92374289;
+        gpio_i.in1 = 32'h77777777;
+        gpio_i.in2 = 32'h99999999;
         gpio_i.start(env_gpio.agent.seqr);
         axi_if.clk_pos(2);
         // waiting for interrupt
@@ -632,7 +641,7 @@ class GPIO_ch_1_intr_en_with_input_at_ch_any extends base_test;
     task interrupt_at_channel_2();
         // transition at channel 2
         gpio_i.in1 = 32'h22222222;
-        gpio_i.in2 = 32'h23283482;
+        gpio_i.in2 = 32'h44444444;
         gpio_i.start(env_gpio.agent.seqr);
         axi_if.clk_pos(2);
         // waiting for interrupt
@@ -659,8 +668,8 @@ class GPIO_ch_1_intr_en_with_input_at_ch_any extends base_test;
 
     task interrupt_at_both_channels();
         // transition at both channels
-        gpio_i.in1 = 32'h83752373;
-        gpio_i.in2 = 32'h92374289;
+        gpio_i.in1 = 32'h77777777;
+        gpio_i.in2 = 32'h99999999;
         gpio_i.start(env_gpio.agent.seqr);
         axi_if.clk_pos(2);
         // waiting for interrupt
@@ -776,7 +785,7 @@ class GPIO_ch_2_intr_en_with_input_at_ch_any extends base_test;
     task interrupt_at_channel_2();
         // transition at channel 2
         gpio_i.in1 = 32'h22222222;
-        gpio_i.in2 = 32'h23283482;
+        gpio_i.in2 = 32'h44444444;
         gpio_i.start(env_gpio.agent.seqr);
         axi_if.clk_pos(2);
         // waiting for interrupt
@@ -803,8 +812,8 @@ class GPIO_ch_2_intr_en_with_input_at_ch_any extends base_test;
 
     task interrupt_at_both_channels();
         // transition at both channels
-        gpio_i.in1 = 32'h83752373;
-        gpio_i.in2 = 32'h92374289;
+        gpio_i.in1 = 32'h77777777;
+        gpio_i.in2 = 32'h99999999;
         gpio_i.start(env_gpio.agent.seqr);
         axi_if.clk_pos(2);
         // waiting for interrupt

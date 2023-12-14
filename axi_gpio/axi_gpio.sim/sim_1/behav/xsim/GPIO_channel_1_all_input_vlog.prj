@@ -1,9 +1,0 @@
-# compile verilog/system verilog design source files
-sv xil_defaultlib  --include "../../../../../" --include "../../../../../axi_env/write_agent" --include "../../../../../gpio_env" --include "../../../../../axi_env" --include "../../../../../axi_env/read_agent" \
-"../../../../../tb_top.sv" \
-
-# compile glbl module
-verilog xil_defaultlib "glbl.v"
-
-# Do not sort compile order
-nosort

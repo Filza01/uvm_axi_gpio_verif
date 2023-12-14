@@ -87,10 +87,10 @@ set_property ip_output_repo /home/user100/SV/uvm_axi_gpio_verif/axi_gpio/axi_gpi
 set_property ip_cache_permissions {read write} [current_project]
 OPTRACE "Creating in-memory project" END { }
 OPTRACE "Adding files" START { }
-read_ip -quiet /home/user100/SV/uvm_axi_gpio_verif/axi_gpio/axi_gpio.srcs/sources_1/ip/axi_gpio_0/axi_gpio_0.xci
-set_property used_in_implementation false [get_files -all /home/user100/SV/uvm_axi_gpio_verif/axi_gpio/axi_gpio.srcs/sources_1/ip/axi_gpio_0/axi_gpio_0_board.xdc]
-set_property used_in_implementation false [get_files -all /home/user100/SV/uvm_axi_gpio_verif/axi_gpio/axi_gpio.srcs/sources_1/ip/axi_gpio_0/axi_gpio_0_ooc.xdc]
-set_property used_in_implementation false [get_files -all /home/user100/SV/uvm_axi_gpio_verif/axi_gpio/axi_gpio.srcs/sources_1/ip/axi_gpio_0/axi_gpio_0.xdc]
+read_ip -quiet /home/user100/SV/uvm_axi_gpio_verif/axi_gpio/axi_gpio.srcs/sources_1/ip/axi_gpio_0_1/axi_gpio_0.xci
+set_property used_in_implementation false [get_files -all /home/user100/SV/uvm_axi_gpio_verif/axi_gpio/axi_gpio.gen/sources_1/ip/axi_gpio_0_1/axi_gpio_0_board.xdc]
+set_property used_in_implementation false [get_files -all /home/user100/SV/uvm_axi_gpio_verif/axi_gpio/axi_gpio.gen/sources_1/ip/axi_gpio_0_1/axi_gpio_0_ooc.xdc]
+set_property used_in_implementation false [get_files -all /home/user100/SV/uvm_axi_gpio_verif/axi_gpio/axi_gpio.gen/sources_1/ip/axi_gpio_0_1/axi_gpio_0.xdc]
 
 OPTRACE "Adding files" END { }
 # Mark all dcp files as not used in implementation to prevent them from being
@@ -106,14 +106,14 @@ set_property used_in_implementation false [get_files dont_touch.xdc]
 set_param ips.enableIPCacheLiteLoad 1
 OPTRACE "Configure IP Cache" START { }
 
-set cached_ip [config_ip_cache -export -no_bom  -dir /home/user100/SV/uvm_axi_gpio_verif/axi_gpio/axi_gpio.runs/axi_gpio_0_synth_1 -new_name axi_gpio_0 -ip [get_ips axi_gpio_0]]
+set cacheID [config_ip_cache -export -no_bom  -dir /home/user100/SV/uvm_axi_gpio_verif/axi_gpio/axi_gpio.runs/axi_gpio_0_synth_1 -new_name axi_gpio_0 -ip [get_ips axi_gpio_0]]
 
 OPTRACE "Configure IP Cache" END { }
-if { $cached_ip eq {} } {
+if { $cacheID == "" } {
 close [open __synthesis_is_running__ w]
 
 OPTRACE "synth_design" START { }
-synth_design -top axi_gpio_0 -part xc7a100tcsg324-1 -mode out_of_context
+synth_design -top axi_gpio_0 -part xc7a100tcsg324-1 -incremental_mode off -mode out_of_context
 OPTRACE "synth_design" END { }
 OPTRACE "Write IP Cache" START { }
 
@@ -141,9 +141,12 @@ catch {
  set TIME_taken [expr [clock seconds] - $TIME_start]
 
  if { [get_msg_config -count -severity {CRITICAL WARNING}] == 0 } {
-  config_ip_cache -add -dcp axi_gpio_0.dcp -move_files $ipCachedFiles -use_project_ipc  -synth_runtime $TIME_taken  -ip [get_ips axi_gpio_0]
+  config_ip_cache -add -dcp axi_gpio_0.dcp -move_files $ipCachedFiles   -synth_runtime $TIME_taken  -ip [get_ips axi_gpio_0]
  }
 OPTRACE "Write IP Cache" END { }
+}
+if { [get_msg_config -count -severity {CRITICAL WARNING}] > 0 } {
+ send_msg_id runtcl-6 info "Synthesis results are not added to the cache due to CRITICAL_WARNING"
 }
 
 rename_ref -prefix_all axi_gpio_0_
@@ -158,32 +161,32 @@ create_report "axi_gpio_0_synth_1_synth_report_utilization_0" "report_utilizatio
 OPTRACE "synth reports" END { }
 
 if { [catch {
-  file copy -force /home/user100/SV/uvm_axi_gpio_verif/axi_gpio/axi_gpio.runs/axi_gpio_0_synth_1/axi_gpio_0.dcp /home/user100/SV/uvm_axi_gpio_verif/axi_gpio/axi_gpio.srcs/sources_1/ip/axi_gpio_0/axi_gpio_0.dcp
+  file copy -force /home/user100/SV/uvm_axi_gpio_verif/axi_gpio/axi_gpio.runs/axi_gpio_0_synth_1/axi_gpio_0.dcp /home/user100/SV/uvm_axi_gpio_verif/axi_gpio/axi_gpio.gen/sources_1/ip/axi_gpio_0_1/axi_gpio_0.dcp
 } _RESULT ] } { 
-  send_msg_id runtcl-3 error "ERROR: Unable to successfully create or copy the sub-design checkpoint file."
+  send_msg_id runtcl-3 status "ERROR: Unable to successfully create or copy the sub-design checkpoint file."
   error "ERROR: Unable to successfully create or copy the sub-design checkpoint file."
 }
 
 if { [catch {
-  write_verilog -force -mode synth_stub /home/user100/SV/uvm_axi_gpio_verif/axi_gpio/axi_gpio.srcs/sources_1/ip/axi_gpio_0/axi_gpio_0_stub.v
+  write_verilog -force -mode synth_stub /home/user100/SV/uvm_axi_gpio_verif/axi_gpio/axi_gpio.gen/sources_1/ip/axi_gpio_0_1/axi_gpio_0_stub.v
 } _RESULT ] } { 
   puts "CRITICAL WARNING: Unable to successfully create a Verilog synthesis stub for the sub-design. This may lead to errors in top level synthesis of the design. Error reported: $_RESULT"
 }
 
 if { [catch {
-  write_vhdl -force -mode synth_stub /home/user100/SV/uvm_axi_gpio_verif/axi_gpio/axi_gpio.srcs/sources_1/ip/axi_gpio_0/axi_gpio_0_stub.vhdl
+  write_vhdl -force -mode synth_stub /home/user100/SV/uvm_axi_gpio_verif/axi_gpio/axi_gpio.gen/sources_1/ip/axi_gpio_0_1/axi_gpio_0_stub.vhdl
 } _RESULT ] } { 
   puts "CRITICAL WARNING: Unable to successfully create a VHDL synthesis stub for the sub-design. This may lead to errors in top level synthesis of the design. Error reported: $_RESULT"
 }
 
 if { [catch {
-  write_verilog -force -mode funcsim /home/user100/SV/uvm_axi_gpio_verif/axi_gpio/axi_gpio.srcs/sources_1/ip/axi_gpio_0/axi_gpio_0_sim_netlist.v
+  write_verilog -force -mode funcsim /home/user100/SV/uvm_axi_gpio_verif/axi_gpio/axi_gpio.gen/sources_1/ip/axi_gpio_0_1/axi_gpio_0_sim_netlist.v
 } _RESULT ] } { 
   puts "CRITICAL WARNING: Unable to successfully create the Verilog functional simulation sub-design file. Post-Synthesis Functional Simulation with this file may not be possible or may give incorrect results. Error reported: $_RESULT"
 }
 
 if { [catch {
-  write_vhdl -force -mode funcsim /home/user100/SV/uvm_axi_gpio_verif/axi_gpio/axi_gpio.srcs/sources_1/ip/axi_gpio_0/axi_gpio_0_sim_netlist.vhdl
+  write_vhdl -force -mode funcsim /home/user100/SV/uvm_axi_gpio_verif/axi_gpio/axi_gpio.gen/sources_1/ip/axi_gpio_0_1/axi_gpio_0_sim_netlist.vhdl
 } _RESULT ] } { 
   puts "CRITICAL WARNING: Unable to successfully create the VHDL functional simulation sub-design file. Post-Synthesis Functional Simulation with this file may not be possible or may give incorrect results. Error reported: $_RESULT"
 }
@@ -193,47 +196,47 @@ if { [catch {
 
 
 if { [catch {
-  file copy -force /home/user100/SV/uvm_axi_gpio_verif/axi_gpio/axi_gpio.runs/axi_gpio_0_synth_1/axi_gpio_0.dcp /home/user100/SV/uvm_axi_gpio_verif/axi_gpio/axi_gpio.srcs/sources_1/ip/axi_gpio_0/axi_gpio_0.dcp
+  file copy -force /home/user100/SV/uvm_axi_gpio_verif/axi_gpio/axi_gpio.runs/axi_gpio_0_synth_1/axi_gpio_0.dcp /home/user100/SV/uvm_axi_gpio_verif/axi_gpio/axi_gpio.gen/sources_1/ip/axi_gpio_0_1/axi_gpio_0.dcp
 } _RESULT ] } { 
-  send_msg_id runtcl-3 error "ERROR: Unable to successfully create or copy the sub-design checkpoint file."
+  send_msg_id runtcl-3 status "ERROR: Unable to successfully create or copy the sub-design checkpoint file."
   error "ERROR: Unable to successfully create or copy the sub-design checkpoint file."
 }
 
 if { [catch {
-  file rename -force /home/user100/SV/uvm_axi_gpio_verif/axi_gpio/axi_gpio.runs/axi_gpio_0_synth_1/axi_gpio_0_stub.v /home/user100/SV/uvm_axi_gpio_verif/axi_gpio/axi_gpio.srcs/sources_1/ip/axi_gpio_0/axi_gpio_0_stub.v
+  file rename -force /home/user100/SV/uvm_axi_gpio_verif/axi_gpio/axi_gpio.runs/axi_gpio_0_synth_1/axi_gpio_0_stub.v /home/user100/SV/uvm_axi_gpio_verif/axi_gpio/axi_gpio.gen/sources_1/ip/axi_gpio_0_1/axi_gpio_0_stub.v
 } _RESULT ] } { 
   puts "CRITICAL WARNING: Unable to successfully create a Verilog synthesis stub for the sub-design. This may lead to errors in top level synthesis of the design. Error reported: $_RESULT"
 }
 
 if { [catch {
-  file rename -force /home/user100/SV/uvm_axi_gpio_verif/axi_gpio/axi_gpio.runs/axi_gpio_0_synth_1/axi_gpio_0_stub.vhdl /home/user100/SV/uvm_axi_gpio_verif/axi_gpio/axi_gpio.srcs/sources_1/ip/axi_gpio_0/axi_gpio_0_stub.vhdl
+  file rename -force /home/user100/SV/uvm_axi_gpio_verif/axi_gpio/axi_gpio.runs/axi_gpio_0_synth_1/axi_gpio_0_stub.vhdl /home/user100/SV/uvm_axi_gpio_verif/axi_gpio/axi_gpio.gen/sources_1/ip/axi_gpio_0_1/axi_gpio_0_stub.vhdl
 } _RESULT ] } { 
   puts "CRITICAL WARNING: Unable to successfully create a VHDL synthesis stub for the sub-design. This may lead to errors in top level synthesis of the design. Error reported: $_RESULT"
 }
 
 if { [catch {
-  file rename -force /home/user100/SV/uvm_axi_gpio_verif/axi_gpio/axi_gpio.runs/axi_gpio_0_synth_1/axi_gpio_0_sim_netlist.v /home/user100/SV/uvm_axi_gpio_verif/axi_gpio/axi_gpio.srcs/sources_1/ip/axi_gpio_0/axi_gpio_0_sim_netlist.v
+  file rename -force /home/user100/SV/uvm_axi_gpio_verif/axi_gpio/axi_gpio.runs/axi_gpio_0_synth_1/axi_gpio_0_sim_netlist.v /home/user100/SV/uvm_axi_gpio_verif/axi_gpio/axi_gpio.gen/sources_1/ip/axi_gpio_0_1/axi_gpio_0_sim_netlist.v
 } _RESULT ] } { 
   puts "CRITICAL WARNING: Unable to successfully create the Verilog functional simulation sub-design file. Post-Synthesis Functional Simulation with this file may not be possible or may give incorrect results. Error reported: $_RESULT"
 }
 
 if { [catch {
-  file rename -force /home/user100/SV/uvm_axi_gpio_verif/axi_gpio/axi_gpio.runs/axi_gpio_0_synth_1/axi_gpio_0_sim_netlist.vhdl /home/user100/SV/uvm_axi_gpio_verif/axi_gpio/axi_gpio.srcs/sources_1/ip/axi_gpio_0/axi_gpio_0_sim_netlist.vhdl
+  file rename -force /home/user100/SV/uvm_axi_gpio_verif/axi_gpio/axi_gpio.runs/axi_gpio_0_synth_1/axi_gpio_0_sim_netlist.vhdl /home/user100/SV/uvm_axi_gpio_verif/axi_gpio/axi_gpio.gen/sources_1/ip/axi_gpio_0_1/axi_gpio_0_sim_netlist.vhdl
 } _RESULT ] } { 
   puts "CRITICAL WARNING: Unable to successfully create the VHDL functional simulation sub-design file. Post-Synthesis Functional Simulation with this file may not be possible or may give incorrect results. Error reported: $_RESULT"
 }
 
-}; # end if cached_ip 
+}; # end if cacheID 
 
 if {[file isdir /home/user100/SV/uvm_axi_gpio_verif/axi_gpio/axi_gpio.ip_user_files/ip/axi_gpio_0]} {
   catch { 
-    file copy -force /home/user100/SV/uvm_axi_gpio_verif/axi_gpio/axi_gpio.srcs/sources_1/ip/axi_gpio_0/axi_gpio_0_stub.v /home/user100/SV/uvm_axi_gpio_verif/axi_gpio/axi_gpio.ip_user_files/ip/axi_gpio_0
+    file copy -force /home/user100/SV/uvm_axi_gpio_verif/axi_gpio/axi_gpio.gen/sources_1/ip/axi_gpio_0_1/axi_gpio_0_stub.v /home/user100/SV/uvm_axi_gpio_verif/axi_gpio/axi_gpio.ip_user_files/ip/axi_gpio_0
   }
 }
 
 if {[file isdir /home/user100/SV/uvm_axi_gpio_verif/axi_gpio/axi_gpio.ip_user_files/ip/axi_gpio_0]} {
   catch { 
-    file copy -force /home/user100/SV/uvm_axi_gpio_verif/axi_gpio/axi_gpio.srcs/sources_1/ip/axi_gpio_0/axi_gpio_0_stub.vhdl /home/user100/SV/uvm_axi_gpio_verif/axi_gpio/axi_gpio.ip_user_files/ip/axi_gpio_0
+    file copy -force /home/user100/SV/uvm_axi_gpio_verif/axi_gpio/axi_gpio.gen/sources_1/ip/axi_gpio_0_1/axi_gpio_0_stub.vhdl /home/user100/SV/uvm_axi_gpio_verif/axi_gpio/axi_gpio.ip_user_files/ip/axi_gpio_0
   }
 }
 file delete __synthesis_is_running__
