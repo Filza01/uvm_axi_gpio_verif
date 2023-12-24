@@ -1,9 +1,11 @@
 
 Verification of AXI GPIO core using UVM. The directed tests approach was opted for this project.
+
 ![GPIO-Page-3](https://github.com/Filza01/uvm_axi_gpio_verif/assets/140054781/4dd6c330-d3fe-4ce9-b470-e969d67c858c)
 
 
 The design under test was as follows:
+
 ![GPIO-Page-2](https://github.com/Filza01/uvm_axi_gpio_verif/assets/140054781/2aba8925-6c2a-43a2-9288-a654293b3792)
 
 
