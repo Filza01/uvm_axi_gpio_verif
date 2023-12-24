@@ -12,3 +12,16 @@ The design under test was as follows:
 The goal of this project was to create a UVM based verification environment for Xilinx LogiCORE IP AXI-GPIO core, which provides a general purpose input/output interface to AXI4-Lite interface. Two environments were created, one for AXI4-Lite interface and other for GPIO interface. The two of them were integrated together in the base test. Different test cases were designed in which sequences for both environments were run to achieve the desired result for that test case.
 
 ![GPIO](https://github.com/Filza01/uvm_axi_gpio_verif/assets/140054781/0edf2254-2851-4201-95d9-b0e5444a335e)
+
+Following test cases were made for the testing of the AXI-GPIO verification environment. All the tests were PASSED.
+- GPIO_ch_1_all_input
+- GPIO_ch_1_all_output
+- GPIO_ch_2_all_input
+- GPIO_ch_2_all_output
+- GPIO_ch_1_2_input
+- GPIO_ch_1_2_output
+- GPIO_ch_1_input_2_output
+- GPIO_ch_1_output_2_input
+- GPIO_ch_1_2_intr_en_with_input_at_ch_any
+- GPIO_ch_1_intr_en_with_input_at_ch_any
+- GPIO_ch_2_intr_en_with_input_at_ch_any
